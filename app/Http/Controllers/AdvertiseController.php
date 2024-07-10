@@ -14,7 +14,8 @@ class AdvertiseController extends Controller
      */
     public function index()
     {
-        return view('advertise.index');
+        $advertises=Advertise::latest()->take(5)->get();
+        return view('advertise.index', compact('advertises'));
     }
 
     /**
