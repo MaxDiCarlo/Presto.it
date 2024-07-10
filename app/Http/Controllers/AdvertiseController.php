@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Advertise;
 use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,8 +40,8 @@ class AdvertiseController extends Controller
      */
     public function show(Advertise $advertise)
     {
-
-        return view('advertise.show', compact('advertise'));
+        $images = Image::where('advertise_id', $advertise->id)->latest()->take(4)->get();
+        return view('advertise.show', compact('advertise', 'images'));
     }
 
     public function category(Advertise $advertise)
