@@ -22,9 +22,7 @@ class AdvertiseController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-
-        return view('advertise.create', compact('categories'));
+        return view('advertise.create');
     }
 
     /**
