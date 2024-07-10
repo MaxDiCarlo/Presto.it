@@ -39,7 +39,14 @@ class AdvertiseController extends Controller
      */
     public function show(Advertise $advertise)
     {
-        //
+
+        return view('advertise.show', compact('advertise'));
+    }
+
+    public function category(Advertise $advertise)
+    {
+        $advertises = Advertise::where('category_id', $advertise->category_id)->get();
+        return view('advertise.category', compact('advertises'));
     }
 
     /**

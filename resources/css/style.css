@@ -1,0 +1,10 @@
+.carousel-inner{
+    height: 70vh;
+    overflow: hidden !important;
+}
+
+.carousel-item{
+    background-size: cover;
+    background-position: center;
+}
+
