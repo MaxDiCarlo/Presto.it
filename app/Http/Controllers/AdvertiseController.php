@@ -30,18 +30,7 @@ class AdvertiseController extends Controller
      */
     public function store(Request $request){
 
-        // prendo l'id della categoria appartenente
-        $category = Category::where('name', $request->categories[0])->first();
-        // dd($category->id);
-        // store dell'Advertise che fa riferimento all'user
-        $advertise = Auth::user()->advertises()->create([
-            'title' => $request->title,
-            'price' => $request->price,
-            'description' => $request->description,
-            'category_id' => $category->id
-        ]);
-
-        return redirect(route('homepage'))->with('message', 'annuncio mandato in elaborazione');
+        
     }
 
     /**
