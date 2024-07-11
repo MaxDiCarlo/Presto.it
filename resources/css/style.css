@@ -1,7 +1,7 @@
 :root {
-    --main: #1e90ff;
+    --main: #4f5d75;
     --white: #ffffff;
-    --orange: #ef8354; 
+    --orange: #ef8354;
   }
 
   body{
@@ -11,9 +11,15 @@
 
 .navbar {
     background-color: var(--orange);
+    
 }
 
-.nav-link, .navbar-brand {
+.dropdown-menu {
+    background-color: #ef8254be;
+    margin-top: 10;
+}
+
+.nav-link, .navbar-brand, button {
     color: white !important;
  }
 
@@ -29,4 +35,12 @@
 
 .a{
     color: var(--white);
+}
+
+.btn-outline-light:hover{
+    color: var(--orange) !important;
+}
+
+.footer{
+    color: #4f5d75 !important;
 }
