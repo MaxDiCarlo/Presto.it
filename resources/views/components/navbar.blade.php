@@ -28,7 +28,7 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Benvenuto {{Auth::user()->name}}
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu mt-3">
               <li>
                 <form action="{{route('logout')}}" method="POST">
                   @csrf

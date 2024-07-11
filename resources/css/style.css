@@ -4,8 +4,20 @@
     --orange: #ef8354;
   }
 
+  h1,p, .nav-link, .navbar-brand, .btn{
+    font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  }
+
+  *{
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  }
+
   body{
     min-height: 100vh;
+    position: relative;
+    padding-bottom: 150px;
     padding-top: 56px;
   }
 
@@ -21,6 +33,10 @@
 
 .nav-link, .navbar-brand, button {
     color: white !important;
+ }
+
+ .nav-link:hover{
+    color: #4f5d75 !important;
  }
 
 .carousel-inner{
