@@ -25,7 +25,7 @@
                 <div class="row justify-content-center align-items-center my-5">   
                     <div class="col-12 col-md-10 text-center opacity-50">
                         <h1>Nessun annuncio da accettare qui</h1>
-                        <p>Porva più tardi...</p>
+                        <p>Prova più tardi...</p>
                     </div>
                 </div>
             @endif
