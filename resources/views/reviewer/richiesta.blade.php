@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 pt-5">
-                <form method="POST">
+                <form method="POST" action="{{route('reviewer.send')}}">
                     @csrf
                     <div class="mb-3">
                         <label for="titolo" class="form-label">Titolo</label>

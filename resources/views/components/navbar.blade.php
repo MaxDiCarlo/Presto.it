@@ -26,7 +26,7 @@
             </li>
             @if (Auth::user()->reviewer)           
               <li class="nav-item">
-                <a class="nav-link" href="">Area revisori</a>
+                <a class="nav-link" href="{{route('reviewer.area')}}">Area revisori</a>
               </li>
             @else
               <li class="nav-item">

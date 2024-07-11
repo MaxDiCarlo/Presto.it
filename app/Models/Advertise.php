@@ -13,7 +13,8 @@ class Advertise extends Model
         'title',
         'price',
         'description',
-        'category_id'
+        'category_id',
+        'pending'
     ];
 
     public function user(){
