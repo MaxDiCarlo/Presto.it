@@ -15,7 +15,6 @@
 
     
     <x-navbar></x-navbar>
-       <x-masthead></x-masthead>
 
     {{$slot}}
     

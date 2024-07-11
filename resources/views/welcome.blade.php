@@ -1,4 +1,5 @@
 <x-layout>
+    <x-masthead></x-masthead>
     @if(session()->has('message'))
     <div class="alert alert-success">
         {{session('message')}}
