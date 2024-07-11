@@ -22,7 +22,7 @@
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
                       <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-                      <label for="password_confirmation" class="form-label">Password confirmation</label>
+                      <label for="password_confirmation" class="form-label mt-3">Password confirmation</label>
                       <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
                     </div>
                     <button type="submit" class="btn btn-main">Registrati</button>
