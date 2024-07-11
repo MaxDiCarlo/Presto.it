@@ -45,7 +45,6 @@
                   </form>
                 </li>
               </ul>
-            </li>
           @endauth
         </ul>
         <form class="d-flex" role="search">

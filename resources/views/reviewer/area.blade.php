@@ -10,13 +10,25 @@
         </div>
     @endif
     <div class="container">
-        <div class="row align-items-center flex-column my-5">
-            @foreach ($advertises as $advertise)
-            <div class="col-12 col-md-6">
-                <x-pending :advertise="$advertise"></x-pending>
-            </div>
-            @endforeach
-        </div>
+            @if (count($advertises) > 0) 
+                <div class="row align-items-center flex-column my-5 gap-5">          
+                @foreach ($advertises as $advertise)
+                    <div class="col-12 col-md-6 d-flex justify-content-center">
+                        <x-pending :advertise="$advertise"></x-pending>
+                    </div>
+                @endforeach
+                    <div class="col-12 col-md-6 text-center">
+                        <h5>Annuncio 1 di {{count($advertises)}}</h5>
+                    </div>
+                </div>
+            @else
+                <div class="row justify-content-center align-items-center my-5">   
+                    <div class="col-12 col-md-10 text-center opacity-50">
+                        <h1>Nessun annuncio da accettare qui</h1>
+                        <p>Porva più tardi...</p>
+                    </div>
+                </div>
+            @endif
     </div>
 
 </x-layout>

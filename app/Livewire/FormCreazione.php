@@ -38,12 +38,22 @@ class FormCreazione extends Component
         // validazione
         $this->validate();
         $category = Category::where('id', $this->category)->first();
-        $advertise = Auth::user()->advertises()->create([
-            'title' => $this->title,
-            'price' => $this->price,
-            'description' => $this->description,
-            'category_id' => $category->id
-        ]);
+        if(Auth::user()->reviewer){
+            $advertise = Auth::user()->advertises()->create([
+                'title' => $this->title,
+                'price' => $this->price,
+                'description' => $this->description,
+                'category_id' => $category->id,
+                'pending' => false
+            ]);
+        } else {
+            $advertise = Auth::user()->advertises()->create([
+                'title' => $this->title,
+                'price' => $this->price,
+                'description' => $this->description,
+                'category_id' => $category->id
+            ]);
+        }
 
         foreach($this->img as $img){
             if($img){
@@ -55,7 +65,11 @@ class FormCreazione extends Component
             }
         }
         
-        return redirect(route('homepage'))->with('message', 'annuncio mandato in elaborazione');
+        if(Auth::user()->reviewer){
+            return redirect(route('reviewer.area'))->with('message', 'Annuncio postato');
+        } else {
+            return redirect(route('homepage'))->with('message', 'annuncio mandato in elaborazione');
+        }
     }
     
     // funzione per la sincronizzazione dei nuovi componenti livewire 
