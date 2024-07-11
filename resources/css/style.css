@@ -91,6 +91,12 @@
   margin-top: auto; /* Spinge il pulsante verso il fondo della card */
 }
 
+.btn2{
+  color: white !important;
+  flex: 0 0 auto; /* Elemento flessibile che non cresce né si riduce */
+  margin-top: auto; /* Spinge il pulsante verso il fondo della card */
+}
+
 .btn{
   transition: .3s all ease-out;
 }
