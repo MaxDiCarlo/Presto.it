@@ -1,3 +1,22 @@
+:root {
+    --main: #1e90ff;
+    --white: #ffffff;
+    --orange: #ef8354; 
+  }
+
+.min-vh-25 {
+    min-height: 25vh;
+}
+
+
+.navbar {
+    background-color: var(--orange);
+}
+
+.nav-link, .navbar-brand {
+    color: white !important;
+ }
+
 .carousel-inner{
     height: 70vh;
     overflow: hidden !important;
@@ -8,3 +27,6 @@
     background-position: center;
 }
 
+.a{
+    color: var(--white);
+}
