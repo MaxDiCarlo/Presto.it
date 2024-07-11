@@ -4,10 +4,10 @@
     --orange: #ef8354; 
   }
 
-.min-vh-25 {
-    min-height: 25vh;
-}
-
+  body{
+    min-height: 100vh;
+    padding-top: 56px;
+  }
 
 .navbar {
     background-color: var(--orange);
