@@ -20,7 +20,7 @@ class ReviewerController extends Controller
     }
 
     public function reviewerArea(){
-        $advertises = Advertise::where('pending', true)->get();
+        $advertises = Advertise::where('pending', true)->take(1)->get();
         return view('reviewer.area', compact('advertises'));
     }
 

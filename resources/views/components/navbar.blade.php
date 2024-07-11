@@ -38,8 +38,8 @@
                 Benvenuto {{Auth::user()->name}}
               </a>
               <ul class="dropdown-menu mt-3">
-                <li>
-                  <form action="{{route('logout')}}" method="POST">
+                <li">
+                  <form class="d-flex justify-content-center" action="{{route('logout')}}" method="POST">
                     @csrf
                     <button type="submit" class="nav-link text-dark">Logout</button>
                   </form>

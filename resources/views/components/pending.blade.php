@@ -7,11 +7,11 @@
     <div class = "d-flex justify-content-around">
       <form action="{{route('reviewer.accetta', compact('advertise'))}}" method="POST">
         @csrf
-        <div class="btn p-2 m-2 ml-4 bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Accetta</div>       
+        <button class="btn p-2 m-2 ml-4 bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Accetta</button>       
       </form>
       <form action="{{route('reviewer.declina', compact('advertise'))}}" method="POST">
         @csrf
-        <div class="btn p-2 m-2 ml-4 bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Declina</div>
+        <button class="btn p-2 m-2 ml-4 bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Declina</button>
       </form>
     </div>
   </div>
