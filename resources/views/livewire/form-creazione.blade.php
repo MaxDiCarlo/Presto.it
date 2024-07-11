@@ -45,8 +45,8 @@
       @endfor
     </div>
 
-    <button type="button" class="btn btn-primary" wire:click="addInput" id="addFileInput">Add File</button>
-      <button type="submit" class="btn btn-primary">Inserisci Annuncio</button>
+    <button type="button" class="btn btn-main" wire:click="addInput" id="addFileInput">Add File</button>
+      <button type="submit" class="btn btn-main">Inserisci Annuncio</button>
   </form>
   <script src="{{ asset('js/script.js') }}"></script>
 </div>
