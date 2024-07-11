@@ -21,22 +21,31 @@
           </li>
           @endguest
           @auth
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('advertise.create')}}">Inserisci annuncio</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Benvenuto {{Auth::user()->name}}
-            </a>
-            <ul class="dropdown-menu mt-3">
-              <li>
-                <form action="{{route('logout')}}" method="POST">
-                  @csrf
-                  <button type="submit" class="nav-link text-dark">Logout</button>
-                </form>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('advertise.create')}}">Inserisci annuncio</a>
+            </li>
+            @if (Auth::user()->reviewer)           
+              <li class="nav-item">
+                <a class="nav-link" href="">Area revisori</a>
               </li>
-            </ul>
-          </li>
+            @else
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('reviewer.richiesta')}}">Lavora con noi</a>
+              </li>
+            @endif
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Benvenuto {{Auth::user()->name}}
+              </a>
+              <ul class="dropdown-menu mt-3">
+                <li>
+                  <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button type="submit" class="nav-link text-dark">Logout</button>
+                  </form>
+                </li>
+              </ul>
+            </li>
           @endauth
         </ul>
         <form class="d-flex" role="search">
