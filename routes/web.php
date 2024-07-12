@@ -24,3 +24,5 @@ Route::middleware(['auth'])->group(function() {
 Route::get('/advertise/index', [AdvertiseController::class, 'index'])->name('advertise.index');
 Route::get('/advertise/{advertise}', [AdvertiseController::class, 'show'])->name('advertise.show');
 Route::get('/advertise/category/{advertise}', [AdvertiseController::class, 'category'])->name('advertise.category');
+Route::get('/richieste', [PublicController::class, 'invia_Richiesta'])->name('inviaRichiesta');
+Route::post('/richieste/submit', [PublicController::class, 'invia_Richiesta_submit'])->name('submit');
