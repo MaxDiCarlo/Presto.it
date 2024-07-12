@@ -8,8 +8,11 @@
 </head>
 <body>
 
-    <h1>Richiesta</h1>
-    <p>Inviato da {{$email}}</p>
+    <h1>Richiesta passaggio a revisore</h1>
+    <p>Inviato da {{$email}}, Signor/Signora {{$name}}</p>
+
+    <p>Riepilogo della richiesta:</p>
+    <p>{{$body}}</p>
 
 </body>
 </html>

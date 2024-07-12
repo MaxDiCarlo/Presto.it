@@ -16,15 +16,17 @@ class Richiesta extends Mailable
 
     public $email;
     public $body;
+    public $name;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($_email,$_body)
+    public function __construct($_email,$_body, $_name)
     {
         //
         $this->email = $_email;
         $this->body = $_body;
+        $this->name = $_name;
     }
 
     /**
@@ -46,6 +48,7 @@ class Richiesta extends Mailable
     {
         return new Content(
             view: 'mail.mailRichiesta',
+            with: ['nome' => $this->name, 'body' => $this->body],
         );
     }
 
