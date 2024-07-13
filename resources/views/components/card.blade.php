@@ -6,4 +6,4 @@
       <p class="card-text"><a href="{{route('advertise.category', compact('advertise'))}}"><span class="badge rounded-pill text-bg-custom">{{$advertise->category->name}}</span></a></p>
       <a href="{{route('advertise.show', compact('advertise'))}}" class="btn btn-main">Vai al dettaglio</a>
     </div>
-  </div>
+</div>
