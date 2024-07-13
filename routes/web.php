@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function() {
     // Route::post('/richieste/submit', [PublicController::class, 'invia_Richiesta_submit'])->name('reviewer.submit');
     
     // accettazione/declino annuncio
-        Route::post('/advertise/accetta/{advertise}', function ($advertise) {
+        Route::post('/advertise/accetta/{advertise}', function (App\Models\Advertise $advertise) {
             if (Auth::check() && Auth::user()->reviewer) {
                 return app(ReviewerController::class)->accetta($advertise);
             } else {
@@ -41,7 +41,7 @@ Route::middleware(['auth'])->group(function() {
             }
         })->name('reviewer.accetta');
         
-        Route::post('/advertise/declina/{advertise}', function ($advertise) {
+        Route::post('/advertise/declina/{advertise}', function (App\Models\Advertise $advertise) {
             if (Auth::check() && Auth::user()->reviewer) {
                 return app(ReviewerController::class)->declina($advertise);
             } else {
