@@ -72,6 +72,30 @@ Route::middleware(['auth'])->group(function() {
                 return redirect('/');
             }
         })->name('reviewer.advertises');
+
+        Route::get('/reviewer/area/declinedAdvertises', function () {
+            if (Auth::check() && Auth::user()->reviewer) {
+                return app(ReviewerController::class)->delcinedAdvertises();
+            } else {
+                return redirect('/');
+            }
+        })->name('reviewer.declinedAdvertises');
+
+        Route::post('/advertise/reset/{advertise}', function (App\Models\Advertise $advertise) {
+            if (Auth::check() && Auth::user()->reviewer) {
+                return app(ReviewerController::class)->reset($advertise);
+            } else {
+                return redirect('/');
+            }
+        })->name('reviewer.reset');
+
+        Route::post('/advertise/delete/{advertise}', function (App\Models\Advertise $advertise) {
+            if (Auth::check() && Auth::user()->reviewer) {
+                return app(ReviewerController::class)->delete($advertise);
+            } else {
+                return redirect('/');
+            }
+        })->name('reviewer.delete');
 });
 
 Route::get('/advertise/index', [AdvertiseController::class, 'index'])->name('advertise.index');
