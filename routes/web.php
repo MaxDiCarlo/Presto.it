@@ -56,6 +56,22 @@ Route::middleware(['auth'])->group(function() {
                 return redirect('/');
             }
         })->name('reviewer.area');
+
+        Route::get('/reviewer/area/users', function () {
+            if (Auth::check() && Auth::user()->reviewer) {
+                return app(ReviewerController::class)->reviewerUsers();
+            } else {
+                return redirect('/');
+            }
+        })->name('reviewer.users');
+
+        Route::get('/reviewer/area/advertises', function () {
+            if (Auth::check() && Auth::user()->reviewer) {
+                return app(ReviewerController::class)->reviewerAdvertises();
+            } else {
+                return redirect('/');
+            }
+        })->name('reviewer.advertises');
 });
 
 Route::get('/advertise/index', [AdvertiseController::class, 'index'])->name('advertise.index');

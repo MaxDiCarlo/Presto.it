@@ -142,3 +142,53 @@ a{
   transform: scale(1.2);
   left: 5px;
 }
+
+/* ---------------------- */
+
+.option {
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px;;
+  position: relative;
+  cursor: pointer;
+}
+
+.option:hover > .bg {
+  opacity: 1;
+}
+
+.option > h2 {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.option > .bg {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  transition: .3s ease-out all;
+  opacity: .4;
+}
+
+.option:nth-child(1) > .bg{
+  background-image: url('../images/advertise.png');
+}
+
+.option:nth-child(2) > .bg{
+  background-image: url('../images/users-icon.png');
+}
+
+.container-area > .row{
+  min-height: 70vh;
+  width: 100%;
+}
