@@ -192,3 +192,16 @@ a{
   min-height: 70vh;
   width: 100%;
 }
+
+/* ---------------------- */
+
+.user {
+  margin: auto;
+  width: 600px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px black;
+  cursor: pointer;
+  background: #dbaf9d;
+  color: white;
+}

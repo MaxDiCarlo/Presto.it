@@ -4,6 +4,7 @@ use App\Http\Controllers\AdvertiseController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ReviewerController;
 use App\Http\Middleware\CheckReviewer;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -96,6 +97,14 @@ Route::middleware(['auth'])->group(function() {
                 return redirect('/');
             }
         })->name('reviewer.delete');
+
+        Route::post('/advertise/area/users/makeReviewer/{user}', function (User $user) {
+            if (Auth::check() && Auth::user()->reviewer) {
+                return app(ReviewerController::class)->makeReviewer($user);
+            } else {
+                return redirect('/');
+            }
+        })->name('reviewer.makeReviewer');
 });
 
 Route::get('/advertise/index', [AdvertiseController::class, 'index'])->name('advertise.index');

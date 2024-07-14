@@ -20,6 +20,7 @@
             @else
                 <div class="row justify-content-center my-5">
                     <h1>Nessun annuncio da mostrare</h1>
+                </div>
             @endif
         </div>
     </div>

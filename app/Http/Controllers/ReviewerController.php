@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Advertise;
 use App\Models\Application;
 use App\Models\Image;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,8 +21,8 @@ class ReviewerController extends Controller
     }
 
     public function reviewerUsers(){
-
-        return view('reviewer.users');
+        $users = User::where('reviewer', false)->get();
+        return view('reviewer.users', compact('users'));
     }
 
     public function reviewerAdvertises(){
@@ -58,7 +59,7 @@ class ReviewerController extends Controller
         foreach($images as $image){
             $image->delete();
         }
-        
+
         $advertise->delete();
         return redirect(route('reviewer.declinedAdvertises'))->with('message', 'Annuncio cancellato con successo');
     }
@@ -70,6 +71,15 @@ class ReviewerController extends Controller
             'pending' => true
         ]);
         return redirect(route('reviewer.declinedAdvertises'))->with('message', 'Annuncio resettato');
+    }
+
+    public function makeReviewer(User $user){
+        $user->update([
+            'reviewer' => true
+        ]);
+
+
+        return redirect(route('reviewer.users'))->with('message', 'Utente reso revisore');
     }
 
 }
