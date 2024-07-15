@@ -16,8 +16,8 @@
     
     <x-navbar></x-navbar>
 
-    {{$slot}}
-    
+        {{$slot}}
+   
     <x-footer></x-footer>
 
 </body>
