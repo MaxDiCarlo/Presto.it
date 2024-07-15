@@ -4,6 +4,7 @@
    margin-top: 30px;
    max-width: 80%;
    margin: 20px auto;
+   display: flex;
     
 }
 
@@ -14,6 +15,11 @@
 
 .nav-link, .navbar-brand, button {
     color: white !important;
+}
+
+
+.navbar-logo img {
+    height: 40px; 
 }
 
 .nav-link{

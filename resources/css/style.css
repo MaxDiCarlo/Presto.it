@@ -6,12 +6,12 @@
 
   h1,p, .nav-link, .navbar-brand, .btn{
     font-family: "Space Grotesk", sans-serif;
-  font-optical-sizing: auto;
+    font-optical-sizing: auto;
   }
 
   *{
     font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
+    font-optical-sizing: auto;
   }
 
   body{

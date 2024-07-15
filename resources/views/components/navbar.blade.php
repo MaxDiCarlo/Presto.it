@@ -1,10 +1,16 @@
 {{-- navbar da modificare --}}
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-md-6">
       <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="navbar-logo">
+          <a href="{{route('homepage')}}">
+              <img src="/images/logo.png" width="70" height="100" alt="Logo del sito">
+            </div>
          <div class="container-fluid">
-           <a class="navbar-brand px-3" href="{{route('homepage')}}"><img src="../images/logofinale.png" alt=""></a>
+            </a>
+           <a class="navbar-brand px-3" href="{{route('homepage')}}"><img src="" alt=""></a>
            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
            </button>
