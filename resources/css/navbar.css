@@ -1,0 +1,40 @@
+.navbar {
+    background-color: var(--orange);
+    
+}
+
+.dropdown-menu {
+    background-color: #ef8254be;
+    margin-top: 10;
+}
+
+.nav-link, .navbar-brand, button {
+    color: white !important;
+}
+
+.nav-link{
+  position: relative;
+  transition: .3s ease-out all;
+}
+
+.nav-link:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  display: inline-block;
+  width: 0%;
+  height: 1px;
+  background: var(--main);
+  transition: .3s ease-out all;
+}
+
+.nav-link:hover:after{
+  width: 70%;
+    color: #4f5d75 !important;
+}
+
+.nav-link:hover{
+  color: #4f5d75 !important;
+}

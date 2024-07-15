@@ -1,4 +1,4 @@
-<header class="masthead mb-5">
+<header class="masthead">
     <div class="container h-100">
       <div class="row h-100 align-items-top">
         <div class="col-12">

@@ -1,3 +1,4 @@
+{{-- navbar da modificare --}}
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{route('homepage')}}">Presto.it</a>

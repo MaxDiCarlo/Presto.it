@@ -1,7 +1,7 @@
 :root {
-    --main: #4f5d75;
+    --main: #07A0C3;
     --white: #ffffff;
-    --orange: #ef8354;
+    --orange: #F0C808;
   }
 
   h1,p, .nav-link, .navbar-brand, .btn{
@@ -19,48 +19,8 @@
     position: relative;
     padding-bottom: 150px;
     padding-top: 56px;
+    background-color: #07a1c34d;
   }
-
-.navbar {
-    background-color: var(--orange);
-    
-}
-
-.dropdown-menu {
-    background-color: #ef8254be;
-    margin-top: 10;
-}
-
-.nav-link, .navbar-brand, button {
-    color: white !important;
-}
-
-.nav-link{
-  position: relative;
-  transition: .3s ease-out all;
-}
-
-.nav-link:after{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  transform: translateX(-50%);
-  left: 50%;
-  display: inline-block;
-  width: 0%;
-  height: 1px;
-  background: var(--main);
-  transition: .3s ease-out all;
-}
-
-.nav-link:hover:after{
-  width: 70%;
-    color: #4f5d75 !important;
-}
-
-.nav-link:hover{
-  color: #4f5d75 !important;
-}
 
 .carousel-inner{
     height: 70vh;
@@ -80,8 +40,11 @@
     color: var(--orange) !important;
 }
 
+footer{
+  background-color: #4f5d75 !important;
+}
 .footer{
-    color: #4f5d75 !important;
+    color: var(--white) !important;
 }
 
 .btn-main{
