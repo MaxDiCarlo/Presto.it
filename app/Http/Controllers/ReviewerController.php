@@ -48,7 +48,7 @@ class ReviewerController extends Controller
         return redirect(route('reviewer.advertises'))->with('message', 'Annuncio declinato');
     }
 
-    public function delcinedAdvertises(){
+    public function declinedAdvertises(){
         
         $advertises = Advertise::where('declined', true)->get();
         return view('reviewer.declinedAdvertises', compact('advertises'));

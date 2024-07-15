@@ -4,107 +4,41 @@ use App\Http\Controllers\AdvertiseController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ReviewerController;
 use App\Http\Middleware\CheckReviewer;
+use App\Http\Middleware\VerificaNonReviewer;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\VerificaReviewer;
 
 Route::get('/', [PublicController::class, 'home'])->name('homepage');
 
 Route::middleware(['auth'])->group(function() {
     // creare, modificare e cancellare articoli
     Route::get('/advertise/create', [AdvertiseController::class, 'create'])->name('advertise.create');
-    
-    // richiesta autenticazione reviewer
-    Route::get('/reviewer/richiesta', function () {
-        if (Auth::check() && !Auth::user()->reviewer) {
-            return app(ReviewerController::class)->richiesta();
-        } else {
-            return redirect('/');
-        }
-    })->name('reviewer.richiesta');
 
-    Route::post('/reviewer/richiesta/submit', function (Illuminate\Http\Request $request) {
-        if (Auth::check() && !Auth::user()->reviewer) {
-            return app(PublicController::class)->invia_Richiesta_submit($request);
-        } else {
-            return redirect('/');
-        }
-    })->name('reviewer.submit');
+    // middleware che verifica che utente non sia reviewer
+    Route::middleware([VerificaNonReviewer::class])->group(function () {
+        Route::get('/reviewer/richiesta', [ReviewerController::class, 'richiesta'])->name('reviewer.richiesta');
+        Route::post('/reviewer/richiesta/submit', [PublicController::class, 'invia_richiesta_submit'])->name('reviewer.submit');
+    });
 
-    // Route::post('/richieste/submit', [PublicController::class, 'invia_Richiesta_submit'])->name('reviewer.submit');
-    
-    // accettazione/declino annuncio
-        Route::post('/advertise/accetta/{advertise}', function (App\Models\Advertise $advertise) {
-            if (Auth::check() && Auth::user()->reviewer) {
-                return app(ReviewerController::class)->accetta($advertise);
-            } else {
-                return redirect('/');
-            }
-        })->name('reviewer.accetta');
-        
-        Route::post('/advertise/declina/{advertise}', function (App\Models\Advertise $advertise) {
-            if (Auth::check() && Auth::user()->reviewer) {
-                return app(ReviewerController::class)->declina($advertise);
-            } else {
-                return redirect('/');
-            }
-        })->name('reviewer.declina');
-        
-        Route::get('/reviewer/area', function () {
-            if (Auth::check() && Auth::user()->reviewer) {
-                return app(ReviewerController::class)->reviewerArea();
-            } else {
-                return redirect('/');
-            }
-        })->name('reviewer.area');
+    // middleware che verifica che utente sia reviewer
+    Route::middleware([VerificaReviewer::class])->group(function () {
+        // accettazione/declino annuncio
+        Route::post('/advertise/accetta/{advertise}', [ReviewerController::class, 'accetta'])->name('reviewer.accetta');
+        Route::post('/advertise/declina/{advertise}', [ReviewerController::class, 'declina'])->name('reviewer.declina');
 
-        Route::get('/reviewer/area/users', function () {
-            if (Auth::check() && Auth::user()->reviewer) {
-                return app(ReviewerController::class)->reviewerUsers();
-            } else {
-                return redirect('/');
-            }
-        })->name('reviewer.users');
+        // area reviewer
+        Route::get('/reviewer/area', [ReviewerController::class, 'reviewerArea'])->name('reviewer.area');
+        Route::get('/reviewer/area/users', [ReviewerController::class, 'reviewerUsers'])->name('reviewer.users');
+        Route::get('/reviewer/area/advertises', [ReviewerController::class, 'reviewerAdvertises'])->name('reviewer.advertises');
+        Route::post('/reviewer/area/users/makeReviewer/{user}', [ReviewerController::class, 'makeReviewer'])->name('reviewer.makeReviewer');
 
-        Route::get('/reviewer/area/advertises', function () {
-            if (Auth::check() && Auth::user()->reviewer) {
-                return app(ReviewerController::class)->reviewerAdvertises();
-            } else {
-                return redirect('/');
-            }
-        })->name('reviewer.advertises');
-
-        Route::get('/reviewer/area/declinedAdvertises', function () {
-            if (Auth::check() && Auth::user()->reviewer) {
-                return app(ReviewerController::class)->delcinedAdvertises();
-            } else {
-                return redirect('/');
-            }
-        })->name('reviewer.declinedAdvertises');
-
-        Route::post('/advertise/reset/{advertise}', function (App\Models\Advertise $advertise) {
-            if (Auth::check() && Auth::user()->reviewer) {
-                return app(ReviewerController::class)->reset($advertise);
-            } else {
-                return redirect('/');
-            }
-        })->name('reviewer.reset');
-
-        Route::post('/advertise/delete/{advertise}', function (App\Models\Advertise $advertise) {
-            if (Auth::check() && Auth::user()->reviewer) {
-                return app(ReviewerController::class)->delete($advertise);
-            } else {
-                return redirect('/');
-            }
-        })->name('reviewer.delete');
-
-        Route::post('/advertise/area/users/makeReviewer/{user}', function (User $user) {
-            if (Auth::check() && Auth::user()->reviewer) {
-                return app(ReviewerController::class)->makeReviewer($user);
-            } else {
-                return redirect('/');
-            }
-        })->name('reviewer.makeReviewer');
+        // annunci declinati
+        Route::get('/reviewer/area/declinedAdvertises', [ReviewerController::class, 'declinedAdvertises'])->name('reviewer.declinedAdvertises');
+        Route::post('/advertise/reset/{advertise}', [ReviewerController::class, 'reset'])->name('reviewer.reset');
+        Route::post('/advertise/delete/{advertise}', [ReviewerController::class, 'delete'])->name('reviewer.delete');
+    });
 });
 
 Route::get('/advertise/index', [AdvertiseController::class, 'index'])->name('advertise.index');
