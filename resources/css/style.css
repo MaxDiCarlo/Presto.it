@@ -1,7 +1,8 @@
 :root {
-    --main: #07A0C3;
+    --main: #2274A5;
     --white: #ffffff;
-    --orange: #F0C808;
+    --orange: #F75C03;
+    --yellow: #F1C40F;
   }
 
   h1,p, .nav-link, .navbar-brand, .btn{
@@ -18,7 +19,7 @@
     min-height: 100vh;
     position: relative;
     padding-bottom: 150px;
-    background-color: #07a1c34d;
+    background-color: var(--main);
   }
 
 .carousel-inner{
@@ -40,7 +41,7 @@
 }
 
 footer{
-  background-color: #4f5d75 !important;
+  background-color: var(--main) !important;
 }
 .footer{
     color: var(--white) !important;
