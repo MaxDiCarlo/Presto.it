@@ -12,7 +12,7 @@
     </div>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6 pt-5">
+            <div class="col-12 col-md-6 pt-5 my-5">
                 <form action="{{route('login')}}" method="POST">
                     @csrf
                     <div class="mb-3">

@@ -15,7 +15,7 @@
   @endif
   <form wire:submit="store" enctype="multipart/form-data">
     @csrf
-    <div class="mb-3">
+    <div class="my-3">
       <label for="title" class="form-label">Title</label>
       <input type="text" class="form-control" id="title" name="title" wire:model="title">
     </div>
