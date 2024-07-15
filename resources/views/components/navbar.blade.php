@@ -1,7 +1,13 @@
 {{-- navbar da modificare --}}
 
 <div class="container">
-  <div class="row justify-content-center">
+    <div class="row">
+      <!-- Colonna per il logo -->
+      <div class="col-12 col-md-6">
+        <a href="{{ route('homepage') }}">
+          <img src="/images/logo.png" width="70" height="100" alt="Logo del sito">
+        </a>
+      </div>
     <div class="col-12 col-md-6">
       <nav class="navbar navbar-expand-lg fixed-top">
         <div class="navbar-logo">
@@ -64,7 +70,18 @@
            </div>
          </div>
        </nav>
-
-    </div>  
-  </div>  
+    </div>
 </div>
+
+{{-- <div class="container text-center">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      1 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      1 of 3
+    </div>
+  </div>
+</div> --}}
