@@ -6,7 +6,7 @@
                     @if (count($images)>=1)
                     <x-carousel :images="$images"></x-carousel>
                     @endif
-                    <div class="container-fluid body">
+                    <div class="container-fluid body pb-3">
                         <div class="row">
                             <div class="col-12">
                                 <h2><strong>€{{$advertise->price}}</strong></h2>
@@ -16,36 +16,39 @@
                                 <div class="divisore"></div>
                                 <p class="m-0">{{$advertise->description}}</p>
                                 <div class="divisore"></div>
-                                <p class="mb-5">Email: {{$advertise->user->email}}</p>
+                                <p>Email: {{$advertise->user->email}}</p>
                             </div>
-                            <div class="col-12 col-md-10 d-flex flex-column">
+                            <div class="col-12 d-flex flex-column">
                                 @if ($advertise->pending == true)
-                                <div class = "d-flex justify-content-center">
+                                <div class="divisore"></div>
+                                <div class = "d-flex justify-content-around">
                                     <form action="{{route('reviewer.accetta', compact('advertise'))}}" method="POST">
                                         @csrf
-                                        <button class="btn p-2 m-2 ml-4 bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Accetta</button>       
+                                        <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Accetta</button>       
                                     </form>
                                     <form action="{{route('reviewer.declina', compact('advertise'))}}" method="POST">
                                         @csrf
-                                        <button class="btn p-2 m-2 ml-4 bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Declina</button>
+                                        <button class="btn bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Declina</button>
                                     </form>
                                 </div>
                                 @endif
                                 @auth
-                                @if (Auth::user()->reviewer)
-                                <div class = "d-flex justify-content-center">
-                                    <form action="{{route('reviewer.reset', compact('advertise'))}}" method="POST">
-                                        @csrf
-                                        <button class="btn p-2 m-2 ml-4 bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Rimanda in elaborazione</button>       
-                                    </form>
-                                    @if ($advertise->declined == true)
-                                    <form action="{{route('reviewer.delete', compact('advertise'))}}" method="POST">
-                                        @csrf
-                                        <button class="btn p-2 m-2 ml-4 bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Elimina definitavamente</button>       
-                                    </form>
+                                    @if (Auth::user()->reviewer)
+                                    <div class="d-flex mb-5 gap-3">
+                                        @if ($advertise->pending == false)
+                                            <form action="{{route('reviewer.reset', compact('advertise'))}}" method="POST">
+                                                @csrf
+                                                <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Rimanda in elaborazione</button>       
+                                            </form>
+                                        @endif
+                                        @if ($advertise->declined == true)
+                                        <form action="{{route('reviewer.delete', compact('advertise'))}}" method="POST">
+                                            @csrf
+                                            <button class="btn bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Elimina definitavamente</button>       
+                                        </form>
+                                        @endif
+                                    </div>
                                     @endif
-                                </div>
-                                @endif
                                 @endauth
                             </div>
                         </div>
