@@ -11,7 +11,6 @@
             </div>
             <div class="col-12 col-md-10 d-flex flex-column align-items-center">
                 <p>Venditore: {{$advertise->user->name}}</p>
-                <p>email: {{$advertise->user->email}}</p>
                 @if ($advertise->pending == true)
                     <div class = "d-flex justify-content-center">
                         <form action="{{route('reviewer.accetta', compact('advertise'))}}" method="POST">

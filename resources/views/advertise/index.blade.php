@@ -1,11 +1,5 @@
 <x-layout>
-    <div class="container text-center">
-        <div class="row">
-          <div class="col-6">
-            <h1 class="text-center my-5 pb-5"><strong>I nostri annunci</strong></h1>
-          </div>
-        </div>
-    </div>
+    <x-masthead2></x-masthead2>
         <div class="container-fluid">
             @if (isset($condizione))
                     @if (count($advertises) > 0 && $condizione)

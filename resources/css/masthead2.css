@@ -1,0 +1,10 @@
+.masthead2 {
+    height: 100vh;
+  height: 400px;
+    background: 
+        linear-gradient(94deg, rgba(0, 0, 0, 0.815) 36%, rgba(214, 214, 214, 0) 67%, rgba(214, 214, 214, 0) 100%),
+        url('/public/images/masthead2.jpg');
+    background-size: cover; /* O "contain" se vuoi adattare l'immagine in base alle dimensioni del contenitore */
+    background-position: right 0% bottom 73%;
+    background-repeat: no-repeat;
+  }
