@@ -19,10 +19,12 @@ class AdvertiseController extends Controller
         return view('advertise.index', compact('advertises'));
     }
 
-    public function indexCategory(Category $category) {
-           $advertises = Advertise::where('category_id', $category->id)->get(); 
+    public function indexCategory(Category $category){
+        // dd($category->id);
+        $advertises = Advertise::where('category_id', $category->id)->get();
         return view('advertise.index', compact('advertises'));
     }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -41,7 +43,7 @@ class AdvertiseController extends Controller
     public function category(Advertise $advertise)
     {
         $advertises = Advertise::where('category_id', $advertise->category_id)->get();
-        return view('advertise.category', compact('advertises'));
+        return view('advertise.index', compact('advertises'));
     }
 
     /**

@@ -28,7 +28,7 @@
                 </div>
         @endif
             </div>
-            @endif
+        @endif
 </div>
 
 </x-layout>

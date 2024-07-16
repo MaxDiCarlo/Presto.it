@@ -91,7 +91,7 @@ $categories = App\Models\Category::all();
             </a>
             <ul class="dropdown-menu">
               @foreach($categories as $category)
-                <li><a class="dropdown-item" href="{{route('advertise.index.category', compact ('category') )}}">{{$category->name}}</a></li>
+                <li><a class="dropdown-item" href="{{route('advertise.indexCategory', compact('category'))}}">{{$category->name}}</a></li>
               @endforeach
             </ul>
           </li>

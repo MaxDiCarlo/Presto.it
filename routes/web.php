@@ -42,5 +42,5 @@ Route::get('/', [PublicController::class, 'home'])->name('homepage');
 Route::get('/advertise/index', [AdvertiseController::class, 'index'])->name('advertise.index');
 Route::get('/advertise/{advertise}', [AdvertiseController::class, 'show'])->name('advertise.show');
 Route::get('/advertise/category/{advertise}', [AdvertiseController::class, 'category'])->name('advertise.category');
+Route::get('/advertise/categories/{category}', [AdvertiseController::class, 'indexCategory'])->name('advertise.indexCategory');
 Route::post('/advertise/search', [AdvertiseController::class, 'search'])->name('advertise.search');
-Route::get('/advertise/category/{category}', [AdvertiseController::class, 'indexCategory'])->name('advertise.index.category');
