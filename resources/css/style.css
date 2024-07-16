@@ -3,6 +3,7 @@
     --white: #ffffff;
     --orange: #F75C03;
     --yellow: #F1C40F;
+    --sfondo: #2275a53b;
   }
 
   h1,p, .nav-link, .navbar-brand, .btn{
@@ -19,7 +20,7 @@
     min-height: 100vh;
     position: relative;
     padding-bottom: 150px;
-    background-color: var(--main);
+    background-color: var(--white);
   }
 
 .carousel-inner{
@@ -70,6 +71,9 @@ footer{
   border: 1px solid var(--main) !important;
 }
 
+.bg-sfondo{
+  background-color: var(--sfondo);
+}
 
 .card {
   width: 18rem;
@@ -144,11 +148,11 @@ a{
 }
 
 .option:nth-child(1) > .bg{
-  background-image: url('../images/advertise.png');
+  background-image: url('/public/images/advertise.png');
 }
 
 .option:nth-child(2) > .bg{
-  background-image: url('../images/users-icon.png');
+  background-image: url('/public/images/users-icon.png');
 }
 
 .container-area > .row{

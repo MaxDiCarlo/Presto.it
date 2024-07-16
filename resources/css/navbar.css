@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
     border-radius: 25px;
     margin-top: 30px;
     max-width: 70%;
@@ -16,10 +16,11 @@
 .nav-link, .navbar-brand, button {
     color: white !important;
 }
-
+*/
 .nav-link{
   position: relative;
   transition: .3s ease-out all;
+  color: var(--yellow) !important;
 }
 
 .nav-link:after{
@@ -31,7 +32,7 @@
   display: inline-block;
   width: 0%;
   height: 1px;
-  background: var(--main);
+  background: var(--yellow);
   transition: .3s ease-out all;
 }
 
@@ -39,7 +40,16 @@
   width: 70%;
     color: #4f5d75 !important;
 }
-
+/* 
 .nav-link:hover{
   color: #4f5d75 !important;
+} */
+
+nav{
+  background : transparent !important;
+  transition: all .3s ease-out;
+}
+
+.bg-main{
+  background-color: var(--main) !important;
 }

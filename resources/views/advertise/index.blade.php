@@ -1,5 +1,5 @@
 <x-layout>
-<div class="container">
+<div class="container bg-sfondo">
     @if (isset($condizione))
             @if (count($advertises) > 0 && $condizione)
             <div class="row justify-content-around my-5">
