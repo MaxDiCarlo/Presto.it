@@ -24,16 +24,18 @@
                         </form>
                     </div>
                 @endif
-                @if ($advertise->declined == true)
+                @if (Auth::user()->reviewer)
                     <div class = "d-flex justify-content-center">
                         <form action="{{route('reviewer.reset', compact('advertise'))}}" method="POST">
                             @csrf
                             <button class="btn p-2 m-2 ml-4 bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Rimanda in elaborazione</button>       
                         </form>
-                        <form action="{{route('reviewer.delete', compact('advertise'))}}" method="POST">
-                            @csrf
-                            <button class="btn p-2 m-2 ml-4 bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Elimina definitavamente</button>       
-                        </form>
+                        @if ($advertise->declined == true)
+                            <form action="{{route('reviewer.delete', compact('advertise'))}}" method="POST">
+                                @csrf
+                                <button class="btn p-2 m-2 ml-4 bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Elimina definitavamente</button>       
+                            </form>
+                        @endif
                     </div>
                 @endif
             </div>
