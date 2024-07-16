@@ -43,6 +43,7 @@
 
 footer{
   background-color: var(--main) !important;
+  width: 100%;
 }
 .footer{
     color: var(--white) !important;

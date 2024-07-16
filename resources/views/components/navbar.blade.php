@@ -3,10 +3,10 @@ $currentRoute=Route::currentRouteName();
 $categories = App\Models\Category::all();
 @endphp    
 
-<nav class="navbar navbar-expand-lg p-0 {{ $currentRoute == 'homepage' ? 'bianco': 'secnav'}}">
+<nav class="navbar navbar-expand-lg p-0 {{ $currentRoute == 'homepage' ? 'bianco': 'secnav'}} mb-3">
     <div class="container-fluid">
       {{-- <a class="navbar-brand" href="{{route('homepage')}}">Navbar</a> --}}
-      <i><img class="ms-5" src="/images/logo.png" width="100" height="100" alt="Logo del sito"></i>
+      <i><img class="ms-md-5" src="/images/logo.png" width="100" height="100" alt="Logo del sito"></i>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
