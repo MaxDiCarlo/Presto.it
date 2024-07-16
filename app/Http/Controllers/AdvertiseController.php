@@ -22,19 +22,9 @@ class AdvertiseController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
+    public function create(){
         return view('advertise.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request){
-
-        
-    }
-
     /**
      * Display the specified resource.
      */
@@ -73,5 +63,30 @@ class AdvertiseController extends Controller
     {
         $advertise->delete();
         return redirect(route('homepage'))->with('message', 'Annuncio cancellato con successo');
+    }
+
+    public function search(Request $request){
+        $stringa = strtolower($request->stringa);
+        $category = Category::where('name', 'LIKE', "%{$stringa}%")->first();
+
+        if($category){
+            $category_id = $category->id;
+            $allAdvertises = Advertise::where('title', 'LIKE', "%{$stringa}%")
+            ->orWhere('description', 'LIKE', "%{$stringa}%")
+            ->orWhere('category_id', 'LIKE', "%{$category_id}%")
+            ->get();
+        } else {
+            $allAdvertises = Advertise::where('title', 'LIKE', "%{$stringa}%")
+            ->orWhere('description', 'LIKE', "%{$stringa}%")
+            ->get();
+        }
+
+        $condizione = true;
+        if(!$stringa){
+            $condizione = false;
+        }
+
+
+        return view('advertise.index', ['advertises' => $allAdvertises, 'condizione' => $condizione]);
     }
 }

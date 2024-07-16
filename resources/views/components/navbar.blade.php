@@ -26,35 +26,36 @@
                             </li>
                             @endguest
                             @auth
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('advertise.create')}}">Inserisci annuncio</a>
-                            </li>
-                            @if (Auth::user()->reviewer)
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('reviewer.area')}}">Area revisori</a>
-                            </li>
-                            @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('reviewer.richiesta')}}">Lavora con noi</a>
-                            </li>
-                            @endif
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Benvenuto {{Auth::user()->name}}
-                                </a>
-                                <ul class="dropdown-menu mt-3">
-                                    <li>
-                                        <form class="d-flex justify-content-center" action="{{route('logout')}}" method="POST">
-                                            @csrf
-                                            <button type="submit" class="nav-link text-dark">Logout</button>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
+                                <li class="nav-item">
+                                    <a href="{{route('advertise.create')}}" class="nav-link">Inserisci annuncio</a>
+                                </li>
+                                @if (Auth::user()->reviewer)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('reviewer.area')}}">Area revisori</a>
+                                </li>
+                                @else
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('reviewer.richiesta')}}">Lavora con noi</a>
+                                </li>
+                                @endif
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Benvenuto {{Auth::user()->name}}
+                                    </a>
+                                    <ul class="dropdown-menu mt-3">
+                                        <li>
+                                            <form class="d-flex justify-content-center" action="{{route('logout')}}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="nav-link text-dark">Logout</button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
                             @endauth
                         </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                        <form class="d-flex" role="search" action="{{route('advertise.search')}}" method="POST">
+                            @csrf
+                            <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search" name="stringa">
                             <button class="btn btn-outline-light me-3" type="submit">Search</button>
                         </form>
                     </div>
