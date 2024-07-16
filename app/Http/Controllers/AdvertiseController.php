@@ -86,13 +86,7 @@ class AdvertiseController extends Controller
             ->orWhere('description', 'LIKE', "%{$stringa}%")
             ->get();
         }
-
-        $condizione = true;
-        if(!$stringa){
-            $condizione = false;
-        }
-
-
-        return view('advertise.index', ['advertises' => $allAdvertises, 'condizione' => $condizione]);
+        
+        return view('advertise.index', ['advertises' => $allAdvertises]);
     }
 }
