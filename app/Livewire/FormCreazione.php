@@ -2,7 +2,6 @@
 
 namespace App\Livewire;
 
-use session;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Image;
@@ -32,9 +31,9 @@ class FormCreazione extends Component
     {
         $this->inputCount++;
     }
-    // fine blocco di codice per aggiunta degli imput
+    //  fine blocco di codice per aggiunta degli input
     
-    public function store(){
+    public function storeAdvertise(){
         // validazione
         $this->validate();
         $category = Category::where('id', $this->category)->first();
@@ -84,6 +83,5 @@ class FormCreazione extends Component
         $categories = Category::all();
         return view('livewire.form-creazione', compact('categories'));
     }
-    
     
 }

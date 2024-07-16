@@ -60,3 +60,9 @@ nav{
 .bg-main{
   background-color: var(--main) !important;
 }
+
+/*  -------------  */
+
+.dropdown:hover > .dropdown-menu{
+  display: block;
+}
