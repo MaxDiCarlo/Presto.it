@@ -64,8 +64,12 @@
         </div>
     </div>
 </div> --}}
+@php
+$currentRoute=Route::currentRouteName();
+$categories = App\Models\Category::all();
+@endphp    
 
-<nav class="navbar navbar-expand-lg p-0 bg-main">
+<nav class="navbar navbar-expand-lg p-0 {{ $currentRoute == 'homepage' ? 'bianco': 'secnav'}}">
     <div class="container-fluid">
       {{-- <a class="navbar-brand" href="{{route('homepage')}}">Navbar</a> --}}
       <i><img class="ms-5" src="/images/logo.png" width="100" height="100" alt="Logo del sito"></i>
@@ -80,7 +84,19 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('advertise.index')}}">Ultimi articoli</a>
           </li>
+          {{-- DROPDOWN CATEGORIE --}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Categorie
+            </a>
+            <ul class="dropdown-menu">
+              @foreach($categories as $category)
+                <li><a class="dropdown-item" href="{{route('advertise.index.category', compact ('category') )}}">{{$category->name}}</a></li>
+              @endforeach
+            </ul>
+          </li>
           @auth
+          {{-- DROPDOWN UTENTE --}}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Benvenuto/a {{Auth::user()->name}}

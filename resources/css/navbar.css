@@ -20,7 +20,14 @@
 .nav-link{
   position: relative;
   transition: .3s ease-out all;
-  color: var(--yellow) !important;
+  /* color: var(--white) !important; */
+}
+
+.bianco > .container-fluid > .navbar-collapse > .navbar-nav > .nav-item > .nav-link{
+    color: var(--white) !important;
+}
+.secnav > .container-fluid > .navbar-collapse > .navbar-nav > .nav-item > .nav-link {
+    color: var(--main) !important;
 }
 
 .nav-link:after{
@@ -32,7 +39,7 @@
   display: inline-block;
   width: 0%;
   height: 1px;
-  background: var(--yellow);
+  background: var(--main);
   transition: .3s ease-out all;
 }
 
@@ -46,7 +53,7 @@
 } */
 
 nav{
-  background : transparent !important;
+   background : transparent !important; 
   transition: all .3s ease-out;
 }
 
