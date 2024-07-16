@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center my-5">
         <!-- Colonna per il logo -->
         <div class="col-12 col-md-6 fixed-top">
             <a href="{{ route('homepage') }}">
