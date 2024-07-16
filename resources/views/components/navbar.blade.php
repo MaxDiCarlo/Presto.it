@@ -1,9 +1,4 @@
-@php
-$currentRoute=Route::currentRouteName();
-$categories = App\Models\Category::all();
-@endphp    
-
-<nav class="navbar navbar-expand-lg p-0 mb-0-md-3 {{ $currentRoute == 'homepage' ? 'bianco': 'secnav'}}" style="background-color: #333; padding: 1rem;">
+<nav class="navbar navbar-expand-lg p-0 mb-0-md-3 {{ Route::currentRouteName() == 'homepage' ? 'bianco': 'secnav'}}" style="background-color: #333; padding: 1rem;">
   <div class="container-fluid">
       <i class="animate__animated animate__zoomIn" style="margin-right: auto;"><img src="/images/logo.png" width="100" height="100" alt="Logo del sito"></i>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +18,7 @@ $categories = App\Models\Category::all();
                       Categorie
                   </a>
                   <ul class="dropdown-menu">
-                      @foreach($categories as $category)
+                      @foreach(App\Models\Category::all() as $category)
                           <li><a class="dropdown-item" href="{{route('advertise.indexCategory', compact('category'))}}">{{$category->name}}</a></li>
                       @endforeach
                   </ul>
