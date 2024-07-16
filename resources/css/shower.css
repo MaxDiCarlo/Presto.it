@@ -1,0 +1,44 @@
+.shower{
+    background: white;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 20px;
+    width: 100%;
+    position: relative;
+    margin: 60px 0;
+    padding-top: 15px;
+}
+
+.shower > .carousel {
+    display: block;
+    border-radius: 20px;
+    height: 40vh !important;
+    overflow: hidden;
+    background-color: skyblue;
+    margin: 0 15px 15px 15px;
+}
+
+.shower > .body{
+    padding: 0 30px !important;
+    width: 100%;
+}
+
+.carousel-inner{
+    height: 100% !important;
+}
+
+.carousel-item{
+    height: 100% !important;
+}
+
+.carousel-item > img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.divisore{
+    height: 1px;
+    margin: 30px auto;
+    width: 100%;
+    background-color: var(--main);
+}
