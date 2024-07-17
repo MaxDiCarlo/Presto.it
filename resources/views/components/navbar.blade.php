@@ -15,7 +15,7 @@
               {{-- DROPDOWN CATEGORIE --}}
               <li class="nav-item dropdown" style="margin: 0 1rem;">
                   <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;">
-                      Categorie
+                      {{__('ui.categories')}}
                   </a>
                   <ul class="dropdown-menu">
                       @foreach(App\Models\Category::all() as $category)

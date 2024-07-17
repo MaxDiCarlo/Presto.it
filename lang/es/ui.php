@@ -1,5 +1,6 @@
 <?php
 return
     [
-        'welcome' => 'Bienvenida/o'
+        'welcome' => 'Bienvenida/o',
+        'categories' => 'Categorias'
     ];
