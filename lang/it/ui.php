@@ -39,4 +39,5 @@ return
         'makereviewer' => 'Rendi revisore',
         'sendtorevision' => 'Manda in revisione',
         'delete' => 'Cancella definitivamente',
+        'ourteam' => 'Il nostro team'
     ];

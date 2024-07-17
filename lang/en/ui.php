@@ -39,5 +39,6 @@ return
         'makereviewer' => 'Make reviewer',
         'sendtorevision' => 'Send to revision',
         'delete' => 'Delete permanently',
+        'ourteam' => 'Our Team',
     ];
 ?>

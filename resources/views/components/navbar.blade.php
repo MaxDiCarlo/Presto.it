@@ -25,7 +25,7 @@
               </li>
               {{-- BOTTONE TEAM --}}
               <li class="nav-item" style="margin: 0 1rem;">
-                <a class="nav-link" href="{{route('team')}}" style="color: white; text-decoration: none;">Il nostro team</a>
+                <a class="nav-link" href="{{route('team')}}" style="color: white; text-decoration: none;">{{__('ui.ourteam')}}</a>
               </li>
               @auth
               {{-- DROPDOWN UTENTE --}}
