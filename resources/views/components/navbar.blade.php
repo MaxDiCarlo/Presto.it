@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
           <ul class="navbar-nav ps-5 mb-2 mb-lg-0 mx-auto" style="display: flex; justify-content: center; align-items: center; flex-grow: 1;">
               <li class="nav-item" style="margin: 0 1rem;">
-                  <a class="nav-link active" aria-current="page" href="{{route('homepage')}}" style="color: white; text-decoration: none;">Home</a>
+                  <a class="nav-link active" aria-current="page" href="{{route('homepage')}}" style="color: white; text-decoration: none;">{{__('ui.home')}}</a>
               </li>
               <li class="nav-item" style="margin: 0 1rem;">
-                  <a class="nav-link" href="{{route('advertise.index')}}" style="color: white; text-decoration: none;">Ultimi articoli</a>
+                  <a class="nav-link" href="{{route('advertise.index')}}" style="color: white; text-decoration: none;">{{__('ui.latest articles')}}</a>
               </li>
               {{-- DROPDOWN CATEGORIE --}}
               <li class="nav-item dropdown" style="margin: 0 1rem;">
@@ -30,9 +30,9 @@
                       {{__('ui.welcome').' '.Auth::user()->name}}
                   </a>
                   <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{{route('advertise.create')}}">Inserisci annuncio</a></li>
+                      <li><a class="dropdown-item" href="{{route('advertise.create')}}">{{__('ui.insertadvertise')}}</a></li>
                       @if(Auth::user()->reviewer)
-                          <li><a class="dropdown-item" href="{{route('reviewer.area')}}">Area revisori</a></li>
+                          <li><a class="dropdown-item" href="{{route('reviewer.area')}}">{{__('ui.reviewersarea')}}</a></li>
                       @else
                           <li><a class="dropdown-item" href="{{route('reviewer.richiesta')}}">Lavora con noi</a></li>
                       @endif
