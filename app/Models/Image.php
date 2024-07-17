@@ -9,7 +9,7 @@ class Image extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['img', 'advertise_id'];
+    protected $fillable = ['img'];
 
     public function advertise()
     {
