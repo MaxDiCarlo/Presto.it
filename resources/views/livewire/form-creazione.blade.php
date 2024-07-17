@@ -16,21 +16,19 @@
     <form wire:submit="storeAdvertise">
       <div class="my-3">
           <label for="title" class="form-label">Title</label>
-          <input type="text" class="form-control" id="title" wire:model.live="title">
-          {{$title}}
+          <input type="text" class="form-control" id="title" wire:model="title">
       </div>
       <div class="mb-3">
           <label for="price" class="form-label">Price</label>
-          <input type="text" class="form-control" id="price" wire:model.live="price">
-          {{$price}}
+          <input type="text" class="form-control" id="price" wire:model="price">
       </div>
       <div class="mb-3">
           <label for="description" class="form-label">Description</label>
-          <textarea id="description" cols="30" rows="10" wire:model.live="description" class="form-control"></textarea>
+          <textarea id="description" cols="30" rows="10" wire:model="description" class="form-control"></textarea>
       </div>
       <div class="mb-3">
           <label for="categories" class="form-label">Categories</label>
-          <select class="form-select" id="categories" wire:model.live="category">
+          <select class="form-select" id="categories" wire:model="category">
               <option value="" selected>Seleziona una categoria</option>
               @foreach ($categories as $category)
                   <option value="{{ $category->id }}">{{ $category->name }}</option>

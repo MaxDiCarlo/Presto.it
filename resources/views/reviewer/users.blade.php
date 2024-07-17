@@ -13,11 +13,17 @@
         
         <div class="container">
             <div class="row justify-content-center my-5 gap-3">
+                @if (count($users) > 1)
                 @foreach ($users as $user)
                     <div class="col-12 col-md-10">
                         <x-user :user="$user"></x-user>
                     </div>
                 @endforeach
+                @else
+                <div class="col-12 col-md-10">
+                    <h1>Nessun utente da mostrare</h1>
+                </div>
+                @endif
             </div>
         </div>
 </x-layout>
