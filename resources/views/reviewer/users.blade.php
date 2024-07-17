@@ -21,7 +21,7 @@
                 @endforeach
                 @else
                 <div class="col-12 col-md-10">
-                    <h1>Nessun utente da mostrare</h1>
+                    <h1>{{__('ui.nousers')}}</h1>
                 </div>
                 @endif
             </div>

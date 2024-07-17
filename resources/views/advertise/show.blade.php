@@ -12,7 +12,7 @@
                                 <h2><strong>€{{$advertise->price}}</strong></h2>
                                 <h2><strong>{{$advertise->title}}</strong></h2>
                                 <p class="card-text"><a href="{{route('advertise.category', compact('advertise'))}}"><span class="badge rounded-pill text-bg-custom">{{$advertise->category->name}}</span></a></p>
-                                <p><strong>Venditore: {{$advertise->user->name}}</strong></p>
+                                <p><strong>{{__('ui.salesperson')}}: {{$advertise->user->name}}</strong></p>
                                 <div class="divisore"></div>
                                 <p class="m-0">{{$advertise->description}}</p>
                                 <div class="divisore"></div>
@@ -24,11 +24,11 @@
                                 <div class = "d-flex justify-content-around">
                                     <form action="{{route('reviewer.accetta', compact('advertise'))}}" method="POST">
                                         @csrf
-                                        <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Accetta</button>       
+                                        <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.accept')}}</button>       
                                     </form>
                                     <form action="{{route('reviewer.declina', compact('advertise'))}}" method="POST">
                                         @csrf
-                                        <button class="btn bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Declina</button>
+                                        <button class="btn bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.decline')}}</button>
                                     </form>
                                 </div>
                                 @endif
@@ -38,13 +38,13 @@
                                         @if ($advertise->pending == false)
                                             <form action="{{route('reviewer.reset', compact('advertise'))}}" method="POST">
                                                 @csrf
-                                                <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Rimanda in elaborazione</button>       
+                                                <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.sendtorevison')}}</button>       
                                             </form>
                                         @endif
                                         @if ($advertise->declined == true)
                                         <form action="{{route('reviewer.delete', compact('advertise'))}}" method="POST">
                                             @csrf
-                                            <button class="btn bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">Elimina definitavamente</button>       
+                                            <button class="btn bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.delete')}}</button>       
                                         </form>
                                         @endif
                                     </div>

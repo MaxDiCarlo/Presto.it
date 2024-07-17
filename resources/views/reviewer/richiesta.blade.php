@@ -16,10 +16,10 @@
                 <form method="POST" action="{{route('reviewer.submit')}}">
                     @csrf
                     <div class="mb-3">
-                        <label for="body" class="form-label">Richiesta</label>
+                        <label for="body" class="form-label">{{__('ui.request')}}</label>
                         <textarea name="body" id="body" class="form-control" cols="30" rows="10"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-main">Invia richiesta</button>
+                    <button type="submit" class="btn btn-main">{{__('ui.sendrequest')}}</button>
                 </form>
             </div>
         </div>

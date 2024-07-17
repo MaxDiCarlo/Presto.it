@@ -18,14 +18,14 @@
                     </div>
                 @endforeach
                     <div class="col-12 col-md-6 text-center">
-                        <h5>Annuncio 1 di {{$number}}</h5>
+                        <h5>{{__('ui.advertise')}} 1 {{__('ui.of')}} {{$number}}</h5>
                     </div>
                 </div>
             @else
                 <div class="row justify-content-center align-items-center my-5">   
                     <div class="col-12 col-md-10 text-center opacity-50">
-                        <h1>Nessun annuncio da accettare qui</h1>
-                        <p>Prova più tardi...</p>
+                        <h1>{{__('ui.noadvertisetoaccept')}}</h1>
+                        <p>{{__('ui.trylater')}}</p>
                     </div>
                 </div>
             @endif

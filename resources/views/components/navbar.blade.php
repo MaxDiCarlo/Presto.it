@@ -34,7 +34,7 @@
                       @if(Auth::user()->reviewer)
                           <li><a class="dropdown-item" href="{{route('reviewer.area')}}">{{__('ui.reviewersarea')}}</a></li>
                       @else
-                          <li><a class="dropdown-item" href="{{route('reviewer.richiesta')}}">Lavora con noi</a></li>
+                          <li><a class="dropdown-item" href="{{route('reviewer.richiesta')}}">{{__('ui.workwithus')}}</a></li>
                       @endif
                       <li><hr class="dropdown-divider"></li>
                       <li><form action="{{route('logout')}}" method="POST">@csrf<button class="dropdown-item" type="submit">Logout</button></form></li>

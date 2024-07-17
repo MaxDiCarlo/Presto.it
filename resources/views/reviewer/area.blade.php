@@ -14,15 +14,15 @@
         <div class="row justify-content-around h-100 align-items-center">
             <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.advertises')}}">
                 <div class="bg"></div>
-                <h2>Advertises</h2>
+                <h2>{{__('ui.advertises')}}</h2>
             </div>
             <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.users')}}">
                 <div class="bg"></div>
-                <h2>Users</h2>
+                <h2>{{__('ui.users')}}</h2>
             </div>
             <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.declinedAdvertises')}}">
                 <div class="bg"></div>
-                <h2>Advertises' bin</h2>
+                <h2>{{__('ui.advertisesbin')}}</h2>
             </div>
         </div>
     </div>
