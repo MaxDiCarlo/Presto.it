@@ -42,18 +42,19 @@ class FormCreazione extends Component
         if (in_array($key, array_keys($this->images))){
             unset($this->images[$key]);
         }
-        $this->cleanImages();
     }
 
-    protected function cleanImages(){
+    protected function cleanForm(){
+            $this->title = '';
+            $this->description = '';
+            $this->category = '';
+            $this->price = '';
             $this->images = [];
-            $this->temporary_images = null;
     }
    
     public function storeAdvertise(){
         // validazione
         $this->validate();
-        dd($this->img);
         $category = Category::where('id', $this->category)->first();
         if(Auth::user()->reviewer){
             $advertise = Auth::user()->advertises()->create([
@@ -70,6 +71,12 @@ class FormCreazione extends Component
                 'description' => $this->description,
                 'category_id' => $category->id
             ]);
+        }
+
+        if(count($this->images) > 0){
+            foreach($this->images as $image){
+                $advertise->images()->create(['img' => $image->store('images', 'public')]);
+            }
         }
 
         

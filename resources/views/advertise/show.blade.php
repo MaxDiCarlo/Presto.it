@@ -38,7 +38,7 @@
                                         @if ($advertise->pending == false)
                                             <form action="{{route('reviewer.reset', compact('advertise'))}}" method="POST">
                                                 @csrf
-                                                <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.sendtorevison')}}</button>       
+                                                <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.sendtorevision')}}</button>       
                                             </form>
                                         @endif
                                         @if ($advertise->declined == true)
