@@ -36,4 +36,8 @@ class PublicController extends Controller
         return redirect()->back();
     }
 
+    public function team(){
+        return view('team.team');
+    }
+
 }

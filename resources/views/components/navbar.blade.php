@@ -23,6 +23,10 @@
                       @endforeach
                   </ul>
               </li>
+              {{-- BOTTONE TEAM --}}
+              <li class="nav-item" style="margin: 0 1rem;">
+                <a class="nav-link" href="{{route('team')}}" style="color: white; text-decoration: none;">Il nostro team</a>
+              </li>
               @auth
               {{-- DROPDOWN UTENTE --}}
               <li class="nav-item dropdown" style="margin: 0 1rem;">

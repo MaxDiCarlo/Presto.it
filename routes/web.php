@@ -45,5 +45,8 @@ Route::get('/advertise/category/{advertise}', [AdvertiseController::class, 'cate
 Route::get('/advertise/categories/{category}', [AdvertiseController::class, 'indexCategory'])->name('advertise.indexCategory');
 Route::post('/advertise/search', [AdvertiseController::class, 'search'])->name('advertise.search');
 
-// rotta per cambiare lingua
+// Rotta per cambiare lingua
 Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
+
+// Rotta per il team
+Route::get('/team', [PublicController::class, 'team'])->name('team');
