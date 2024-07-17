@@ -13,7 +13,7 @@
         
         <div class="container">
             <div class="row justify-content-center my-5 gap-3">
-                @if (count($users) > 1)
+                @if (count($users) > 0)
                 @foreach ($users as $user)
                     <div class="col-12 col-md-10">
                         <x-user :user="$user"></x-user>
