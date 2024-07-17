@@ -27,7 +27,7 @@
               {{-- DROPDOWN UTENTE --}}
               <li class="nav-item dropdown" style="margin: 0 1rem;">
                   <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;">
-                      Benvenuto/a {{Auth::user()->name}}
+                      {{__('ui.welcome').' '.Auth::user()->name}}
                   </a>
                   <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{route('advertise.create')}}">Inserisci annuncio</a></li>
@@ -50,6 +50,9 @@
                   </li>
               @endguest
           </ul>
+          <x-_locale lang="it" />
+          <x-_locale lang="en" />
+          <x-_locale lang="es" />
           <form action="{{route('advertise.search')}}" method="POST" class="d-flex ms-auto" role="search">
               @csrf
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="stringa">

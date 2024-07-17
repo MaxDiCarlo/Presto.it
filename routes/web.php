@@ -44,3 +44,6 @@ Route::get('/advertise/{advertise}', [AdvertiseController::class, 'show'])->name
 Route::get('/advertise/category/{advertise}', [AdvertiseController::class, 'category'])->name('advertise.category');
 Route::get('/advertise/categories/{category}', [AdvertiseController::class, 'indexCategory'])->name('advertise.indexCategory');
 Route::post('/advertise/search', [AdvertiseController::class, 'search'])->name('advertise.search');
+
+// rotta per cambiare lingua
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');

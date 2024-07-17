@@ -7,6 +7,7 @@ use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class PublicController extends Controller
 {
@@ -28,6 +29,11 @@ class PublicController extends Controller
         //Se il metodo ddella richiesta é di tipo POST devo ritornare un redirect
         // a cui passo una rotta da richiamare
         return redirect()->route('homepage')->with('message', 'Mail inviata correttamente');
+    }
+
+    public function setLanguage($lang){
+        session()->put('locale', $lang);
+        return redirect()->back();
     }
 
 }
