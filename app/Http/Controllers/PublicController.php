@@ -40,4 +40,8 @@ class PublicController extends Controller
         return view('team.team');
     }
 
+    public function teamDettaglio(){
+        return view('team.teamDettaglio');
+    }
+
 }

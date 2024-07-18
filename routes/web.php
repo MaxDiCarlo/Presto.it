@@ -55,3 +55,4 @@ Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('s
 
 // Rotta per il team
 Route::get('/team', [PublicController::class, 'team'])->name('team');
+Route::get('/team/dettaglio', [PublicController::class, 'teamDettaglio'])->name('team.dettaglio');
