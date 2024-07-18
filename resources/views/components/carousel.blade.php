@@ -7,18 +7,18 @@
   <div class="carousel-inner">
     @foreach ($images as $index => $image)
       <div class="carousel-item {{ $index == 0 ? 'active' : '' }} position-relative">
-        <img src="{{ $image->getUrl(400, 400) }}" alt="..." height="100%" width="100%">
+        <img src="{{ $image->getUrl(1800, 1800) }}" class="rounded-3" alt="..." height="100%">
       </div>
     @endforeach
   </div>
-    @if (count($images) > 1)
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    @endif
+  @if (count($images) > 1)
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon frecce" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon frecce" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  @endif
 </div>
