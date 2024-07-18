@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdvertiseController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ReviewerController;
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\VerificaNonReviewer;
 use App\Http\Middleware\VerificaReviewer;
 use Illuminate\Support\Facades\Route;
@@ -26,14 +27,18 @@ Route::middleware(['auth'])->group(function() {
 
         // Area reviewer
         Route::get('/reviewer/area', [ReviewerController::class, 'reviewerArea'])->name('reviewer.area');
-        Route::get('/reviewer/area/users', [ReviewerController::class, 'reviewerUsers'])->name('reviewer.users');
         Route::get('/reviewer/area/advertises', [ReviewerController::class, 'reviewerAdvertises'])->name('reviewer.advertises');
-        Route::post('/reviewer/area/users/makeReviewer/{user}', [ReviewerController::class, 'makeReviewer'])->name('reviewer.makeReviewer');
-
+        
         // Annunci declinati
         Route::get('/reviewer/area/declinedAdvertises', [ReviewerController::class, 'declinedAdvertises'])->name('reviewer.declinedAdvertises');
         Route::post('/advertise/reset/{advertise}', [ReviewerController::class, 'reset'])->name('reviewer.reset');
         Route::post('/advertise/delete/{advertise}', [ReviewerController::class, 'delete'])->name('reviewer.delete');
+
+        // Area admin
+        Route::middleware([AdminMiddleware::class])->group(function () {
+            Route::get('/reviewer/area/users', [ReviewerController::class, 'reviewerUsers'])->name('reviewer.users');
+            Route::post('/reviewer/area/users/makeReviewer/{user}', [ReviewerController::class, 'makeReviewer'])->name('reviewer.makeReviewer');
+        });
     });
 });
 

@@ -16,14 +16,16 @@
                 <div class="bg"></div>
                 <h2>{{__('ui.advertises')}}</h2>
             </div>
-            <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.users')}}">
-                <div class="bg"></div>
-                <h2>{{__('ui.users')}}</h2>
-            </div>
             <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.declinedAdvertises')}}">
                 <div class="bg"></div>
                 <h2>{{__('ui.advertisesbin')}}</h2>
             </div>
+            @if (Auth::user()->admin)
+                <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.users')}}">
+                    <div class="bg"></div>
+                    <h2>{{__('ui.users')}}</h2>
+                </div>
+            @endif
         </div>
     </div>
 

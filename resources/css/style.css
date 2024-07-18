@@ -162,6 +162,10 @@ a{
 }
 
 .option:nth-child(2) > .bg{
+  background-image: url('/public/images/bin.jpg');
+}
+
+.option:nth-child(3) > .bg{
   background-image: url('/public/images/users-icon.png');
 }
 
