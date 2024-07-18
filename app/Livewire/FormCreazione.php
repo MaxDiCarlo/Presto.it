@@ -79,7 +79,7 @@ class FormCreazione extends Component
             foreach($this->images as $image){
                 $newFileName = "advertises/{$advertise->id}";
                 $newImage = $advertise->images()->create(['path' => $image->store($newFileName, 'public')]);
-                dispatch(new ResizeImage($newImage->path, 400, 400));
+                dispatch(new ResizeImage($newImage->path, 500, 500));
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
