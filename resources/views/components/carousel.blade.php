@@ -7,7 +7,7 @@
   <div class="carousel-inner">
     @foreach ($images as $index => $image)
       <div class="carousel-item {{ $index == 0 ? 'active' : '' }} position-relative">
-        <img src="{{ $image->getUrl(1800, 1800) }}" class="rounded-3" alt="..." height="100%">
+        <img src="{{ $image->getUrl(1800, 1800) }}" class="rounded-3" alt="..." height="100%" width="100%">
       </div>
     @endforeach
   </div>
