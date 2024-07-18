@@ -10,7 +10,7 @@
             <a class="btn btn-main" href="{{route('login')}}">{{__('ui.btnindexlogin')}}</a>
           @endguest
           @auth
-            <p class="lead text-white">{{__('ui.subtitleindex')}}</p>
+            <p class="lead text-white animate__animated animate__fadeInLeft">{{__('ui.subtitleindex')}}</p>
             <a class="btn btn-main" href="{{route('advertise.create')}}">{{__('ui.insertadvertise')}}</a>
           @endauth
         </div>
