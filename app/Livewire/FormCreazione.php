@@ -2,9 +2,11 @@
 
 namespace App\Livewire;
 
+use App\Jobs\ResizeImage;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Image;
+use Illuminate\Support\Facades\File;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
@@ -75,8 +77,11 @@ class FormCreazione extends Component
 
         if(count($this->images) > 0){
             foreach($this->images as $image){
-                $advertise->images()->create(['img' => $image->store('images', 'public')]);
+                $newFileName = "advertises/{$advertise->id}";
+                $newImage = $advertise->images()->create(['path' => $image->store($newFileName, 'public')]);
+                dispatch(new ResizeImage($newImage->path, 400, 400));
             }
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
 
         

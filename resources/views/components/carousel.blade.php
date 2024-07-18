@@ -1,5 +1,3 @@
-
-
 <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
     @foreach ($images as $index => $image)
@@ -9,7 +7,7 @@
   <div class="carousel-inner">
     @foreach ($images as $index => $image)
       <div class="carousel-item {{ $index == 0 ? 'active' : '' }} position-relative">
-        <img src="{{ Storage::url($image->img) }}" alt="..." height="100%">
+        <img src="{{ $image->getUrl(400, 400) }}" alt="..." height="100%" width="100%">
       </div>
     @endforeach
   </div>
