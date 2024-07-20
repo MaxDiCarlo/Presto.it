@@ -1,0 +1,41 @@
+:root {
+    --main: #2274A5;
+    --white: #ffffff;
+    --orange: #F75C03;
+    --yellow: #F1C40F;
+    --sfondo: #2275a53b;
+    --footer: #576066;
+  }
+
+  .arrow-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .arrow-right,
+  .arrow-left {
+    display: inline-block;
+    width: 0;
+    height: 0;
+  }
+  
+  .arrow-right {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid black;
+  }
+  
+  .arrow-left {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid black;
+  }
+  
+  .arrow-container.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .current{
+    opacity: 0.5;
+  }

@@ -15,7 +15,7 @@ class AdvertiseController extends Controller
      */
     public function index()
     {
-        $advertises=Advertise::where('pending', false)->where('declined', false)->latest()->take(6)->get();
+        $advertises=Advertise::where('pending', false)->where('declined', false)->latest()->paginate(6);
         return view('advertise.index', compact('advertises'));
     }
 
