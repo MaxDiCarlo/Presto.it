@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\Richiesta;
 use App\Mail\ContactMail;
+use App\Models\Advertise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -13,7 +14,8 @@ class PublicController extends Controller
 {
     //
     public function home(){
-        return view('welcome');
+        $advertises = Advertise::latest()->take(4)->get();
+        return view('welcome', compact('advertises'));
     }
 
     public function invia_Richiesta_submit(Request $request){
