@@ -4,6 +4,7 @@
     --orange: #F75C03;
     --yellow: #F1C40F;
     --sfondo: #2275a53b;
+    --footer: #576066;
   }
 
   h1,p, .nav-link, .navbar-brand, .btn{
@@ -47,7 +48,7 @@
 }
 
 footer{
-  background-color: var(--main) !important;
+  background-color: var(--footer) !important;
   width: 100%;
 }
 .footer{

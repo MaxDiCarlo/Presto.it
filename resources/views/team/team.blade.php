@@ -45,12 +45,6 @@
     </div>
 
     {{-- BOTTONE DESCRIZIONI --}}
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-2 text-center my-4">
-          <a href="{{route('team.dettaglio')}}" class="btn btn-main"><strong>Descrizioni team</strong></a>
-        </div>
-      </div>
-    </div>
+    
     
 </x-layout>

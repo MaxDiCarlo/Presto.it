@@ -5,7 +5,7 @@ return
         'categories' => 'Categorie',
         'choosecategory' => "Scegli una categoria",
         'addfile' => 'Aggiungi file',
-        'latest articles' => 'Ultimi articoli',
+        'latest articles' => 'Ultimi annunci',
         'home' => 'Home',
         'insertadvertise' => 'Inserisci annuncio',
         'reviewersarea' => 'Area revisori',
