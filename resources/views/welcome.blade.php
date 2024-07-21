@@ -2,6 +2,11 @@
     <x-masthead></x-masthead>
     <div class="container-fluid my-5 py-5">
         @if (count($advertises) > 0)
+            <div class="row mb-5">
+                <div class="col-12 d-flex justify-content-center">
+                    <h2 class="presentation-h2">{{__('ui.latest articles')}}</h2>
+                </div>
+            </div>
             <div class="row justify-content-around">
                 @foreach($advertises as $advertise)
                 <div class="col-12 col-md-4 mb-5 d-flex justify-content-center">
