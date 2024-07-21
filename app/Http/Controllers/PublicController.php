@@ -15,6 +15,7 @@ class PublicController extends Controller
     //
     public function home(){
         $advertises = Advertise::latest()->take(4)->get();
+        // $advertises = [];
         return view('welcome', compact('advertises'));
     }
 

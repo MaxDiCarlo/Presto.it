@@ -40,5 +40,6 @@ return
         'sendtorevision' => 'Send to revision',
         'delete' => 'Delete permanently',
         'ourteam' => 'Our Team',
+        'showall' => 'Show all'
     ];
 ?>

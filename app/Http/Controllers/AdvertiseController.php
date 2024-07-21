@@ -21,7 +21,7 @@ class AdvertiseController extends Controller
 
     public function indexCategory(Category $category){
         // dd($category->id);
-        $advertises = Advertise::where('category_id', $category->id)->get();
+        $advertises = Advertise::where('category_id', $category->id)->latest()->paginate(6);
         return view('advertise.index', compact('advertises'));
     }
 
@@ -80,11 +80,11 @@ class AdvertiseController extends Controller
             $allAdvertises = Advertise::where('title', 'LIKE', "%{$stringa}%")
             ->orWhere('description', 'LIKE', "%{$stringa}%")
             ->orWhere('category_id', 'LIKE', "%{$category_id}%")
-            ->get();
+            ->latest()->paginate(6);
         } else {
             $allAdvertises = Advertise::where('title', 'LIKE', "%{$stringa}%")
             ->orWhere('description', 'LIKE', "%{$stringa}%")
-            ->get();
+            ->latest()->paginate(6);
         }
         
         return view('advertise.index', ['advertises' => $allAdvertises]);
