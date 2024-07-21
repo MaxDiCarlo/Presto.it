@@ -4,7 +4,8 @@
     --orange: #F75C03;
     --yellow: #F1C40F;
     --sfondo: #2275a53b;
-    --footer: #576066;
+    --footer: #0e2a3c;
+  
   }
 
   h1,p, .nav-link, .navbar-brand, .btn{
@@ -83,14 +84,48 @@ footer{
 }
 
 .card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 10px 14px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        box-shadow: 5px 5px 15px;
 }
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container::before {
+  content: '';
+  display: block;
+  width: 220px; /* Imposta la dimensione del bordo esterno */
+  height: 220px; /* Imposta la dimensione del bordo esterno */
+  border-radius: 50%;
+  border: 5px solid var(--main); /* Aggiungi il bordo azzurro */
+  position: absolute;
+  top: -10px; /* Distanzia il bordo dall'immagine */
+  left: -10px; /* Distanzia il bordo dall'immagine */
+  z-index: -1; /* Posiziona il bordo dietro l'immagine */
+}
+
+.card-img-top {
+  border-radius: 50%;
+  width: 200px; /* Imposta la dimensione desiderata */
+  height: 200px; /* Imposta la dimensione desiderata */
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.card-img-top {
+  border-radius: 50%;
+        width: 200px; /* Imposta la dimensione desiderata */
+        height: 200px; /* Imposta la dimensione desiderata */
+        object-fit: cover;
+        margin: 0 auto;
+      }
+
+      .card-title {
+        margin-top: 2.5rem;
+        
+    }
 
 .card-body {
   display: flex;
@@ -168,11 +203,13 @@ a{
 
 .option:nth-child(3) > .bg{
   background-image: url('/public/images/users-icon.png');
+
 }
 
 .container-area > .row{
-  min-height: 70vh;
+  min-height: 60vh;
   width: 100%;
+  margin-bottom: 70px;
 }
 
 /* ---------------------- */

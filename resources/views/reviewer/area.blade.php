@@ -11,7 +11,7 @@
     @endif
 
     <div class="container-fluid container-area">
-        <div class="row justify-content-around h-100 align-items-center">
+        <div class="row justify-content-around align-items-center m-0">
             <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.advertises')}}">
                 <div class="bg"></div>
                 <h2>{{__('ui.advertises')}}</h2>
@@ -20,8 +20,10 @@
                 <div class="bg"></div>
                 <h2>{{__('ui.advertisesbin')}}</h2>
             </div>
-            @if (Auth::user()->admin)
-                <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.users')}}">
+        </div>
+        @if (Auth::user()->admin)
+        <div class="row justify-content-around align-items-center">
+            <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.users')}}">
                     <div class="bg"></div>
                     <h2>{{__('ui.users')}}</h2>
                 </div>
