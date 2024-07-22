@@ -1,6 +1,21 @@
 <x-layout>
     <x-masthead></x-masthead>
     <div class="container-fluid my-5 py-5">
+        <div class="row justify-content-around gap-3 mb-5 pb-5">
+            @foreach (App\Models\Category::all() as $category)
+                <div class="col-10 col-md-3 categoria m-3" data-url="{{route('advertise.indexCategory', compact('category'))}}">
+                    <h2>{{$category->name}}</h2>
+                </div>
+            @endforeach
+
+            <script>
+                document.querySelectorAll('.categoria').forEach(element => {
+                    element.addEventListener('click', ()=>{
+                        window.location.href = element.getAttribute('data-url');
+                    })
+                })
+            </script>
+        </div>
         @if (count($advertises) > 0)
             <div class="row mb-5">
                 <div class="col-12 d-flex justify-content-center">

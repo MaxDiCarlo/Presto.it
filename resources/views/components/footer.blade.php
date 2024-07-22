@@ -1,10 +1,8 @@
 <footer class="py-3 position-absolute bottom-0 w-100">
   <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-    <li class="nav-item"><a href="#" class="nav-link footer px-2 text-body-secondary">Home</a></li>
-    <li class="nav-item"><a href="#" class="nav-link footer px-2 text-body-secondary">Features</a></li>
-    <li class="nav-item"><a href="#" class="nav-link footer px-2 text-body-secondary">Pricing</a></li>
-    <li class="nav-item"><a href="#" class="nav-link footer px-2 text-body-secondary">FAQs</a></li>
-    <li class="nav-item"><a href="#" class="nav-link footer px-2 text-body-secondary">About</a></li>
+    <li class="nav-item"><a href="{{route('homepage')}}" class="nav-link footer px-2 text-body-secondary">Home</a></li>
+    <li class="nav-item"><a href="{{route('advertise.index')}}" class="nav-link footer px-2 text-body-secondary">Tutti gli articoli</a></li>
+    <li class="nav-item"><a href="{{route('team')}}" class="nav-link footer px-2 text-body-secondary">Il nostro team</a></li>
   </ul>
-  <p class="text-center text-body-secondary footer">© 2024 Company, Inc</p>
+  <p class="text-center text-body-secondary footer m-0"><img src="/images/logo.png" width="80" height="80" alt="Logo del sito">© 2024 Company, Inc</p>
 </footer>
