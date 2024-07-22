@@ -14,7 +14,7 @@
                 <div class="col-12 col-md-10 text-center opacity-50">
                     <h1>{{__('ui.noadvertise')}}</h1>
                     <p>{{__('ui.trylater')}}</p>
-                </div>  
+                </div>
             </div>
         @endif
     </div>
