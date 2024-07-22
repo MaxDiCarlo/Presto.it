@@ -201,7 +201,7 @@ a{
   background-image: url('/public/images/bin.jpg');
 }
 
-.option:nth-child(3) > .bg{
+.admin > .option:nth-child(1) > .bg{
   background-image: url('/public/images/users-icon.png');
 
 }
@@ -244,4 +244,52 @@ a{
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra */
   text-align: center;
   min-width: 60%;
+}
+
+.categoria{
+  height: 350px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px black;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.categoria > h2{
+  color: var(--main);
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.categoria:nth-child(1){
+  background-image: url('/public/images/sports-tools-.jpg');
+}
+.categoria:nth-child(2){
+  background-image: url('/public/images/cinema.jpeg');
+}
+.categoria:nth-child(3){
+  background-image: url('/public/images/intrattenimento.jpg');
+}
+.categoria:nth-child(4){
+  background-image: url('/public/images/Videogiochi.jpg');
+}
+.categoria:nth-child(5){
+  background-image: url('/public/images/cucina.jpg');
+}
+.categoria:nth-child(6){
+  background-image: url('/public/images/programmazione.jpg');
+}
+.categoria:nth-child(7){
+  background-image: url('/public/images/viaggi.jpg');
+}
+.categoria:nth-child(8){
+  background-image: url('/public/images/manga.jpg');
+}
+.categoria:nth-child(9){
+  background-image: url('/public/images/musica.jpg');
 }
