@@ -38,6 +38,8 @@ Route::middleware(['auth'])->group(function() {
         Route::middleware([AdminMiddleware::class])->group(function () {
             Route::get('/reviewer/area/users', [ReviewerController::class, 'reviewerUsers'])->name('reviewer.users');
             Route::post('/reviewer/area/users/makeReviewer/{user}', [ReviewerController::class, 'makeReviewer'])->name('reviewer.makeReviewer');
+            Route::post('/reviewer/area/users/searchUser', [ReviewerController::class, 'searchUser'])->name('users.search');
+            Route::get('/reviewer/area/users/searchUser', [ReviewerController::class, 'searchUser'])->name('users.search.get');
         });
     });
 });

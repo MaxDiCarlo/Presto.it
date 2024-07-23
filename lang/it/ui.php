@@ -40,5 +40,6 @@ return
         'sendtorevision' => 'Manda in revisione',
         'delete' => 'Cancella definitivamente',
         'ourteam' => 'Il nostro team',
-        'showall' => 'Mostra tutto'
+        'showall' => 'Mostra tutto',
+        'norevusers' => "Utenti non revisori"
     ];

@@ -63,6 +63,13 @@ footer{
   margin-top: auto; /* Spinge il pulsante verso il fondo della card */
 }
 
+.btn-orange{
+  color: white !important;
+  background: var(--orange);
+  flex: 0 0 auto; /* Elemento flessibile che non cresce né si riduce */
+  margin-top: auto; /* Spinge il pulsante verso il fondo della card */
+}
+
 .btn2{
   color: white !important;
   flex: 0 0 auto; /* Elemento flessibile che non cresce né si riduce */
@@ -73,10 +80,16 @@ footer{
   transition: .3s all ease-out;
 }
 
-.btn:hover{
+.btn-main:hover{
   background: var(--white) !important;
   color: var(--main) !important;
   border: 1px solid var(--main) !important;
+}
+
+.btn-orange:hover{
+  background: var(--white) !important;
+  color: var(--orange) !important;
+  border: 1px solid var(--orange) !important;
 }
 
 .bg-sfondo{
@@ -220,7 +233,7 @@ a{
   border-radius: 10px;
   box-shadow: 1px 1px 5px black;
   cursor: pointer;
-  background: #dbaf9d;
+  background: var(--main);
   color: white;
 }
 

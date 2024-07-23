@@ -40,6 +40,7 @@ return
         'sendtorevision' => 'Enviar a revisión',
         'delete' => 'Eliminar permanentemente',
         'ourteam' => 'Nuestro equipo',
-        'showall' => 'Mostrar todo'
+        'showall' => 'Mostrar todo',
+        'norevusers' => "No revisores"
     ];
 ?>

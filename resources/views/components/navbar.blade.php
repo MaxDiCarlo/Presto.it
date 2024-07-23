@@ -7,14 +7,14 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
           <ul class="navbar-nav ps-5 mb-2 mb-lg-0 mx-auto" style="display: flex; justify-content: center; align-items: center; flex-grow: 1;">
               <li class="nav-item" style="margin: 0 1rem;">
-                  <a class="nav-link active" aria-current="page" href="{{route('homepage')}}" style="color: white; text-decoration: none;">{{__('ui.home')}}</a>
+                  <a class="nav-link nav1 active" aria-current="page" href="{{route('homepage')}}" style="color: white; text-decoration: none;">{{__('ui.home')}}</a>
               </li>
               <li class="nav-item" style="margin: 0 1rem;">
-                  <a class="nav-link" href="{{route('advertise.index')}}" style="color: white; text-decoration: none;">{{__('ui.latest articles')}}</a>
+                  <a class="nav-link nav1" href="{{route('advertise.index')}}" style="color: white; text-decoration: none;">{{__('ui.latest articles')}}</a>
               </li>
               {{-- DROPDOWN CATEGORIE --}}
               <li class="nav-item dropdown" style="margin: 0 1rem;">
-                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;">
+                  <a class="nav-link nav1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;">
                       {{__('ui.categories')}}
                   </a>
                   <ul class="dropdown-menu">
@@ -25,12 +25,12 @@
               </li>
               {{-- BOTTONE TEAM --}}
               <li class="nav-item" style="margin: 0 1rem;">
-                <a class="nav-link" href="{{route('team')}}" style="color: white; text-decoration: none;">{{__('ui.ourteam')}}</a>
+                <a class="nav-link nav1" href="{{route('team')}}" style="color: white; text-decoration: none;">{{__('ui.ourteam')}}</a>
               </li>
               @auth
               {{-- DROPDOWN UTENTE --}}
               <li class="nav-item dropdown" style="margin: 0 1rem;">
-                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;">
+                  <a class="nav-link nav1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;">
                       {{__('ui.welcome').' '.Auth::user()->name}}
                   </a>
                   <ul class="dropdown-menu">
@@ -47,17 +47,17 @@
               @endauth
               @guest
                   <li class="nav-item" style="margin: 0 1rem;">
-                      <a class="nav-link" href="{{route('login')}}" style="color: white; text-decoration: none;">Login</a>
+                      <a class="nav-link nav1" href="{{route('login')}}" style="color: white; text-decoration: none;">Login</a>
                   </li>
                   <li class="nav-item" style="margin: 0 1rem;">
-                      <a class="nav-link" href="{{route('register')}}" style="color: white; text-decoration: none;">Register</a>
+                      <a class="nav-link nav1" href="{{route('register')}}" style="color: white; text-decoration: none;">Register</a>
                   </li>
               @endguest
           </ul>
           <x-_locale lang="it" />
           <x-_locale lang="en" />
           <x-_locale lang="es" />
-          <form action="{{route('advertise.search')}}" method="POST" class="d-flex ms-auto" role="search">
+          <form action="{{Route::currentRouteName() == 'reviewer.users' || "users.search.get" || 'users.search.get' ? route('users.search') : route('advertise.search')}}" method="POST" class="d-flex ms-auto" role="search">
               @csrf
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="stringa">
               <button class="btn btn-main" type="submit">Search</button>
@@ -65,3 +65,5 @@
       </div>
   </div>
 </nav>
+
+{{-- {{ Route::currentRouteName() == 'homepage' ? 'bianco': 'secnav'}} --}}

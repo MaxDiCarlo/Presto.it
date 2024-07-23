@@ -25,6 +25,24 @@ class ReviewerController extends Controller
         return view('reviewer.users', compact('users'));
     }
 
+    public function searchUser(Request $request){
+        $stringa = strtolower($request->input('stringa', ''));
+    
+        if ($stringa) {
+            $users = User::where('reviewer', false)
+                ->where(function ($query) use ($stringa) {
+                    $query->where('name', 'LIKE', "%{$stringa}%")
+                          ->orWhere('email', 'LIKE', "%{$stringa}%");
+                })
+                ->paginate(6);
+        } else {
+            $users = User::where('reviewer', false)->paginate(6);
+        }
+    
+        return view('reviewer.users', compact('users'));
+    }
+    
+
     public function reviewerAdvertises(){
 
         $advertises = Advertise::where('pending', true)->take(1)->get();

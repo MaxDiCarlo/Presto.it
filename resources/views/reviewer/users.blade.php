@@ -12,6 +12,7 @@
 
     <div class="container-fluid">
         @if ($users->count() > 0)
+            <div class="row justify-content-center mt-5 opacity-50"><h1 class="col-10 text-center">{{__('ui.norevusers')}}</h1></div>
             <div class="row justify-content-around mt-5">
                 @foreach($users as $user)
                 <div class="col-12 col-md-8 mb-4 d-flex justify-content-center">
@@ -29,7 +30,7 @@
     </div>
 
     @if ($users->count() > 0)
-        <div class="container">
+        <div class="container mb-5">
             <div class="row justify-content-center mb-5">
                 <div class="col-12 col-md-6 text-center d-flex justify-content-center gap-3">
                     @if ($users->onFirstPage())
@@ -41,11 +42,11 @@
                             <div class="arrow-left"></div>
                         </a>
                     @endif
-
+        
                     @foreach ($users->getUrlRange(1, $users->lastPage()) as $page => $url)
-                        <a href="{{ $url }}" class="btn btn-main{{ $users->currentPage() == $page ? ' current' : '' }}">{{ $page }}</a>
+                        <a href="{{ $url }}" class="btn btn-orange{{ $users->currentPage() == $page ? ' current' : '' }}">{{ $page }}</a>
                     @endforeach
-
+        
                     @if ($users->hasMorePages())
                         <a href="{{ $users->nextPageUrl() }}" class="arrow-container">
                             <div class="arrow-right"></div>
@@ -58,5 +59,6 @@
                 </div>
             </div>
         </div>
+        
     @endif
 </x-layout>
