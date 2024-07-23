@@ -54,9 +54,23 @@
                   </li>
               @endguest
           </ul>
-          <x-_locale lang="it" />
+
+          <li class="nav-item dropdown" style="margin: 0 1rem; list-style: none;">
+            <a class="nav-item dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;"><i class="bi bi-translate" style="font-size: 25px; margin-right: 20px"></i></a>
+            <ul class="dropdown-menu">
+
+                <li><a class="dropdown-item" href=""><x-_locale lang="it" /></a></li>
+                
+                <li><a class="dropdown-item" href=""><x-_locale lang="en" /></a></li>
+               
+                <li><a class="dropdown-item" href=""><x-_locale lang="es" /></a></li>
+               
+            </ul>
+          </li>
+          {{-- <x-_locale lang="it" />
           <x-_locale lang="en" />
-          <x-_locale lang="es" />
+          <x-_locale lang="es" /> --}}
+
           <form action="{{route('advertise.search')}}" method="POST" class="d-flex ms-auto" role="search">
               @csrf
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="stringa">

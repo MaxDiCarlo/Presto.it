@@ -268,30 +268,6 @@ a{
   font-size: 1.5em;
 }
 
-.categoria:nth-child(1){
-  background-image: url('/public/images/sports-tools-.jpg');
-}
-.categoria:nth-child(2){
-  background-image: url('/public/images/cinema.jpeg');
-}
-.categoria:nth-child(3){
-  background-image: url('/public/images/intrattenimento.jpg');
-}
-.categoria:nth-child(4){
-  background-image: url('/public/images/Videogiochi.jpg');
-}
-.categoria:nth-child(5){
-  background-image: url('/public/images/cucina.jpg');
-}
-.categoria:nth-child(6){
-  background-image: url('/public/images/programmazione.jpg');
-}
-.categoria:nth-child(7){
-  background-image: url('/public/images/viaggi.jpg');
-}
-.categoria:nth-child(8){
-  background-image: url('/public/images/manga.jpg');
-}
-.categoria:nth-child(9){
-  background-image: url('/public/images/musica.jpg');
+.dropdown-menu{
+  min-width: 0;
 }
