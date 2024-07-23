@@ -20,10 +20,8 @@
                 <div class="bg"></div>
                 <h2>{{__('ui.advertisesbin')}}</h2>
             </div>
-        </div>
-        @if (Auth::user()->admin)
-        <div class="row justify-content-around align-items-center admin">
-            <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.users')}}">
+            @if (Auth::user()->admin)
+                <div class="col-12 col-md-5 text-center option p-0 my-5" data-url="{{route('reviewer.users')}}">
                     <div class="bg"></div>
                     <h2>{{__('ui.users')}}</h2>
                 </div>

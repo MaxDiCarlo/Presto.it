@@ -201,9 +201,8 @@ a{
   background-image: url('/public/images/bin.jpg');
 }
 
-.admin > .option:nth-child(1) > .bg{
+.option:nth-child(3) > .bg{
   background-image: url('/public/images/users-icon.png');
-
 }
 
 .container-area > .row{

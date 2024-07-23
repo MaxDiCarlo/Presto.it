@@ -21,7 +21,7 @@ class ReviewerController extends Controller
     }
 
     public function reviewerUsers(){
-        $users = User::where('reviewer', false)->get();
+        $users = User::where('reviewer', false)->paginate(6);
         return view('reviewer.users', compact('users'));
     }
 
