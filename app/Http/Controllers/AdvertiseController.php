@@ -51,26 +51,39 @@ class AdvertiseController extends Controller
      */
     public function destroy(Advertise $advertise)
     {
+        $images = Image::where('advertise_id', $advertise->id)->get();
+        foreach($images as $image){
+            $image->delete();
+        }
+
         $advertise->delete();
         return redirect(route('homepage'))->with('message', 'Annuncio cancellato con successo');
     }
 
-    public function search(Request $request){
-        $stringa = strtolower($request->stringa);
+    public function search(Request $request) {
+        $stringa = strtolower($request->input('stringa'));
+
+        // Trova la categoria che corrisponde al nome cercato
         $category = Category::where('name', 'LIKE', "%{$stringa}%")->first();
 
-        if($category){
-            $category_id = $category->id;
-            $allAdvertises = Advertise::where('title', 'LIKE', "%{$stringa}%")
-            ->orWhere('description', 'LIKE', "%{$stringa}%")
-            ->orWhere('category_id', 'LIKE', "%{$category_id}%")
-            ->latest()->paginate(6);
-        } else {
-            $allAdvertises = Advertise::where('title', 'LIKE', "%{$stringa}%")
-            ->orWhere('description', 'LIKE', "%{$stringa}%")
-            ->latest()->paginate(6);
-        }
-        
-        return view('advertise.index', ['advertises' => $allAdvertises]);
+        // Filtra gli annunci in base ai criteri di ricerca e agli stati delle colonne pending e declined
+        $query = Advertise::where('pending', false)
+                        ->where('declined', false)
+                        ->where(function ($query) use ($stringa, $category) {
+                            // Filtra per titolo e descrizione
+                            $query->where('title', 'LIKE', "%{$stringa}%")
+                                    ->orWhere('description', 'LIKE', "%{$stringa}%");
+
+                            // Se è stata trovata una categoria, filtra anche per category_id
+                            if ($category) {
+                                $query->orWhere('category_id', $category->id);
+                            }
+                        })
+                        ->latest()
+                        ->paginate(6);
+
+        // Passa gli annunci filtrati alla vista
+        return view('advertise.index', ['advertises' => $query]);
     }
+
 }

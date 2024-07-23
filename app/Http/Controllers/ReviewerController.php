@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Advertise;
 use App\Models\Application;
 use App\Models\Image;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,21 +26,24 @@ class ReviewerController extends Controller
         return view('reviewer.users', compact('users'));
     }
 
-    public function searchUser(Request $request){
+    public function search(Request $request) {
         $stringa = strtolower($request->input('stringa', ''));
     
-        if ($stringa) {
-            $users = User::where('reviewer', false)
-                ->where(function ($query) use ($stringa) {
-                    $query->where('name', 'LIKE', "%{$stringa}%")
-                          ->orWhere('email', 'LIKE', "%{$stringa}%");
-                })
-                ->paginate(6);
-        } else {
-            $users = User::where('reviewer', false)->paginate(6);
-        }
+        $query = Advertise::where('pending', false)
+                           ->where('declined', false)
+                           ->where(function ($query) use ($stringa) {
+                               $query->where('title', 'LIKE', "%{$stringa}%")
+                                     ->orWhere('description', 'LIKE', "%{$stringa}%");
+                               
+                               $category = Category::where('name', 'LIKE', "%{$stringa}%")->first();
+                               if ($category) {
+                                   $query->orWhere('category_id', $category->id);
+                               }
+                           });
     
-        return view('reviewer.users', compact('users'));
+        $advertises = $query->latest()->paginate(6)->appends(['stringa' => $stringa]);
+    
+        return view('advertise.index', ['advertises' => $advertises]);
     }
     
 
@@ -88,7 +92,7 @@ class ReviewerController extends Controller
             'declined' => false,
             'pending' => true
         ]);
-        return redirect(route('reviewer.declinedAdvertises'))->with('message', 'Annuncio resettato');
+        return redirect(route('reviewer.advertises'))->with('message', 'Annuncio resettato');
     }
 
     public function makeReviewer(User $user){

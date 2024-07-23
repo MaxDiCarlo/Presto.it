@@ -8,39 +8,41 @@
                     @endif
                     @if ($advertise->pending)
                     @foreach ($images as $image)
-                    <div class="col-md-12">
-                        <div class="card-body w-100">
-                            <div class="labels ps-4 pe-4 mb-3">
-                                @foreach ($image->labels as $label)
-                                #{{$label}},
-                                @endforeach
-                            </div>
-                            <h5 class="mb-3">Ratings</h5>
-                            <div class="row justify-content-center text-center">
-                                <div class="col-6">
-                                    <div class="text-center mx-auto {{$image->adult}}"></div>
+                        @if ($image->labels)
+                        <div class="col-md-12">
+                            <div class="card-body w-100">
+                                    <div class="labels ps-4 pe-4 mb-3">
+                                        @foreach ($image->labels as $label)
+                                        #{{$label}},
+                                        @endforeach
+                                    </div>                           
+                                    <h5 class="mb-3">Ratings</h5>
+                                    <div class="row justify-content-center text-center">
+                                        <div class="col-6">
+                                            <div class="text-center mx-auto {{$image->adult}}"></div>
+                                        </div>
+                                        <div class="col-6">adult</div>
+                                        <div class="col-6">
+                                            <div class="text-center mx-auto {{$image->violence}}"></div>
+                                        </div>
+                                        <div class="col-6">violence</div>
+                                        <div class="col-6">
+                                            <div class="text-center mx-auto {{$image->spoof}}"></div>
+                                        </div>
+                                        <div class="col-6">spoof</div>
+                                        <div class="col-6">
+                                            <div class="text-center mx-auto {{$image->racy}}"></div>
+                                        </div>
+                                        <div class="col-6">racy</div>
+                                        <div class="col-6">
+                                            <div class="text-center mx-auto {{$image->medical}}"></div>
+                                        </div>
+                                        <div class="col-6">medical</div>
+                                    </div>
                                 </div>
-                                <div class="col-6">adult</div>
-                                <div class="col-6">
-                                    <div class="text-center mx-auto {{$image->violence}}"></div>
-                                </div>
-                                <div class="col-6">violence</div>
-                                <div class="col-6">
-                                    <div class="text-center mx-auto {{$image->spoof}}"></div>
-                                </div>
-                                <div class="col-6">spoof</div>
-                                <div class="col-6">
-                                    <div class="text-center mx-auto {{$image->racy}}"></div>
-                                </div>
-                                <div class="col-6">racy</div>
-                                <div class="col-6">
-                                    <div class="text-center mx-auto {{$image->medical}}"></div>
-                                </div>
-                                <div class="col-6">medical</div>
-                            </div>
                         </div>
-                    </div>
-                    @endforeach
+                        @endif
+                        @endforeach
                     @endif
                     <div class="container-fluid body pb-3">
                         <div class="row">

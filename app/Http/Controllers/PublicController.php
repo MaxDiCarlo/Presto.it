@@ -14,7 +14,7 @@ class PublicController extends Controller
 {
     //
     public function home(){
-        $advertises = Advertise::latest()->take(6)->get();
+        $advertises = Advertise::where('pending', false)->where('declined', false)->latest()->take(6)->get();
         // $advertises = [];
         return view('welcome', compact('advertises'));
     }

@@ -60,5 +60,4 @@ Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('s
 Route::get('/team', [PublicController::class, 'team'])->name('team');
 Route::get('/team/dettaglio', [PublicController::class, 'teamDettaglio'])->name('team.dettaglio');
 
-
-Route::post('/advertise/delete/{advertise}', [AdvertiseController::class, 'destroy'])->middleware(['auth'])->middleware(VerificaOwner::class)->name('advertise.delete');
+Route::post('/advertise/cancella/{advertise}', [AdvertiseController::class, 'destroy'])->middleware(['auth'])->middleware(VerificaOwner::class)->name('advertise.delete');

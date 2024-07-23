@@ -30,8 +30,7 @@
             </div>
         @endif
     </div>
-
-    @if (count($advertises) > 0)
+    @if (request()->routeIs('advertise.index') && count($advertises) > 0)
         <div class="container">
             <div class="row justify-content-center mb-5">
                 <div class="col-12 col-md-6 text-center d-flex justify-content-center gap-3">
