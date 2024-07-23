@@ -24,6 +24,7 @@ return
         'advertises' => 'Advertises',
         'advertise' => 'Advertise',
         'advertisesbin' => 'Advertises\'s bin',
+        'user' => 'User',
         'users' => 'Users',
         'nousers' => 'No users to show',
         'of' => 'of',
@@ -41,6 +42,9 @@ return
         'delete' => 'Delete permanently',
         'ourteam' => 'Our Team',
         'showall' => 'Show all',
-        'norevusers' => 'Not reviewer users'
+        'norevusers' => 'Not reviewer users',
+        'search' => "Search",
+        'searchadvertise' => "Search by title, category and description",
+        'searchuser' => "search user"
     ];
 ?>

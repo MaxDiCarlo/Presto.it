@@ -24,6 +24,7 @@ return
         'advertises' => 'Annunci',
         'advertise' => 'Annuncio',
         'advertisesbin' => 'Cestino annunci',
+        'user' => 'Utente',
         'users' => 'Utenti',
         'nousers' => 'Nessun utente da mostrare',
         'of' => 'di',
@@ -41,5 +42,8 @@ return
         'delete' => 'Cancella definitivamente',
         'ourteam' => 'Il nostro team',
         'showall' => 'Mostra tutto',
-        'norevusers' => "Utenti non revisori"
+        'norevusers' => "Utenti non revisori",
+        'search' => "Cerca",
+        'searchadvertise' => "Cerca per titolo, categoria e descrizione",
+        'searchuser' => "Cerca utente"
     ];

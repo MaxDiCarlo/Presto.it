@@ -24,6 +24,7 @@ return
         'advertises' => 'Anuncios',
         'advertise' => 'Anuncio',
         'advertisesbin' => 'Papelera de anuncios',
+        'user' => 'usuario',
         'users' => 'Usuarios',
         'nousers' => 'No hay usuarios para mostrar',
         'of' => 'de',
@@ -41,6 +42,9 @@ return
         'delete' => 'Eliminar permanentemente',
         'ourteam' => 'Nuestro equipo',
         'showall' => 'Mostrar todo',
-        'norevusers' => "No revisores"
+        'norevusers' => "No revisores",
+        'search' => "cerca",
+        'searchadvertise' => "Buscar por título, categoría y descripción",
+        'searchuser' => "usuario de búsqueda"
     ];
 ?>
