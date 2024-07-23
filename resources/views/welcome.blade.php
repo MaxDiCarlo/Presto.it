@@ -1,20 +1,17 @@
 <x-layout>
     <x-masthead></x-masthead>
-    <div class="container-fluid my-5 py-5">
+    <div class="container-fluid my-3 py-3">
         <div class="row justify-content-around gap-3 mb-5 pb-5">
-            @foreach (App\Models\Category::all() as $category)
-                <div class="col-10 col-md-3 categoria m-3" data-url="{{route('advertise.indexCategory', compact('category'))}}">
-                    <h2>{{$category->name}}</h2>
+                <div class="col-11 col-md-11">
+                    <ul class="nav nav-pills nav-fill">
+                        @foreach(App\Models\Category::all() as $category)
+                        <li class="nav-item">
+                          <a class="nav-link nav2" aria-current="page" href="{{route('advertise.indexCategory', compact('category'))}}">{{$category->name}}</a>
+                        </li>
+                        @endforeach
+                      </ul>
                 </div>
-            @endforeach
-
-            <script>
-                document.querySelectorAll('.categoria').forEach(element => {
-                    element.addEventListener('click', ()=>{
-                        window.location.href = element.getAttribute('data-url');
-                    })
-                })
-            </script>
+               
         </div>
         @if (count($advertises) > 0)
             <div class="row mb-5">

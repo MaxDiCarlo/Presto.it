@@ -11,7 +11,9 @@
     color: var(--main) !important;
 }
 
-.nav-link:after{
+
+
+.nav1:after{
   content: '';
   position: absolute;
   bottom: 0;
@@ -20,11 +22,32 @@
   display: inline-block;
   width: 0%;
   height: 1px;
-  background: var(--main);
+  background: var(--orange);
+  transition: .3s ease-out all;
+}
+.nav2:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  display: inline-block;
+  width: 0%;
+  height: 1px;
+  background: var(--main) !important;
   transition: .3s ease-out all;
 }
 
-.nav-link:hover:after{
+
+.nav2{
+  color: var(--orange) !important;
+}
+
+.nav1:hover:after{
+  width: 70%;
+    color: #4f5d75 !important;
+}
+.nav2:hover:after{
   width: 70%;
     color: #4f5d75 !important;
 }
