@@ -5,6 +5,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ReviewerController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\VerificaNonReviewer;
+use App\Http\Middleware\VerificaOwner;
 use App\Http\Middleware\VerificaReviewer;
 use Illuminate\Support\Facades\Route;
 
@@ -58,3 +59,6 @@ Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('s
 // Rotta per il team
 Route::get('/team', [PublicController::class, 'team'])->name('team');
 Route::get('/team/dettaglio', [PublicController::class, 'teamDettaglio'])->name('team.dettaglio');
+
+
+Route::post('/advertise/delete/{advertise}', [AdvertiseController::class, 'destroy'])->middleware(['auth'])->middleware(VerificaOwner::class)->name('advertise.delete');

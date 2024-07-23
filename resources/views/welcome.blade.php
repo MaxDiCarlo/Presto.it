@@ -6,7 +6,7 @@
                     <ul class="nav nav-pills nav-fill">
                         @foreach(App\Models\Category::all() as $category)
                         <li class="nav-item">
-                          <a class="nav-link nav2" aria-current="page" href="{{route('advertise.indexCategory', compact('category'))}}">{{$category->name}}</a>
+                          <a class="nav-link nav2" aria-current="page" href="{{route('advertise.indexCategory', compact('category'))}}">{{__("ui.$category->name")}}</a>
                         </li>
                         @endforeach
                       </ul>

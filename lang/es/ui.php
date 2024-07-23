@@ -45,6 +45,12 @@ return
         'norevusers' => "No revisores",
         'search' => "cerca",
         'searchadvertise' => "Buscar por título, categoría y descripción",
-        'searchuser' => "usuario de búsqueda"
+        'searchuser' => "usuario de búsqueda",
+        'sport' => 'deporte',
+        'console e videogiochi' => 'consolas y videojuegos',
+        'intrattenimento' => 'entretenimiento',
+        'tech' => 'tecnología',
+        'casa' => 'hogar',
+        'moda' => 'moda'
     ];
 ?>

@@ -7,38 +7,40 @@
                     <x-carousel :images="$images"></x-carousel>
                     @endif
                     @if ($advertise->pending)
-                        @foreach ($images as $image)
-                            @foreach ($image->labels as $label)
+                    @foreach ($images as $image)
+                    <div class="col-md-12">
+                        <div class="card-body w-100">
+                            <div class="labels ps-4 pe-4 mb-3">
+                                @foreach ($image->labels as $label)
                                 #{{$label}},
-                            @endforeach
-                            <div class="col-md-8 ps-3">
-                                <div class="card-body">
-                                    <h5>Ratings</h5>
-                                    <div class="row justify-content-center">
-                                        <div class="col-2">
-                                            <div class="text-center mx-auto {{$image->adult}}"></div>
-                                        </div>
-                                        <div class="col-10">adult</div>
-                                        <div class="col-2">
-                                            <div class="text-center mx-auto {{$image->violence}}"></div>
-                                        </div>
-                                        <div class="col-10">violence</div>
-                                        <div class="col-2">
-                                            <div class="text-center mx-auto {{$image->spoof}}"></div>
-                                        </div>
-                                        <div class="col-10">spoof</div>
-                                        <div class="col-2">
-                                            <div class="text-center mx-auto {{$image->racy}}"></div>
-                                        </div>
-                                        <div class="col-10">racy</div>
-                                        <div class="col-2">
-                                            <div class="text-center mx-auto {{$image->medical}}"></div>
-                                        </div>
-                                        <div class="col-10">medical</div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
-                        @endforeach
+                            <h5 class="mb-3">Ratings</h5>
+                            <div class="row justify-content-center text-center">
+                                <div class="col-6">
+                                    <div class="text-center mx-auto {{$image->adult}}"></div>
+                                </div>
+                                <div class="col-6">adult</div>
+                                <div class="col-6">
+                                    <div class="text-center mx-auto {{$image->violence}}"></div>
+                                </div>
+                                <div class="col-6">violence</div>
+                                <div class="col-6">
+                                    <div class="text-center mx-auto {{$image->spoof}}"></div>
+                                </div>
+                                <div class="col-6">spoof</div>
+                                <div class="col-6">
+                                    <div class="text-center mx-auto {{$image->racy}}"></div>
+                                </div>
+                                <div class="col-6">racy</div>
+                                <div class="col-6">
+                                    <div class="text-center mx-auto {{$image->medical}}"></div>
+                                </div>
+                                <div class="col-6">medical</div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                     @endif
                     <div class="container-fluid body pb-3">
                         <div class="row">
@@ -52,7 +54,7 @@
                                 <div class="divisore"></div>
                                 <p>Email: {{$advertise->user->email}}</p>
                             </div>
-                            <div class="col-12 d-flex flex-column">
+                            <div class="col-12 d-flex flex-column gap-3">
                                 @if ($advertise->pending == true)
                                 <div class="divisore"></div>
                                 <div class = "d-flex justify-content-around">
@@ -67,22 +69,32 @@
                                 </div>
                                 @endif
                                 @auth
-                                    @if (Auth::user()->reviewer)
-                                    <div class="d-flex mb-5 gap-3">
-                                        @if ($advertise->pending == false)
-                                            <form action="{{route('reviewer.reset', compact('advertise'))}}" method="POST">
-                                                @csrf
-                                                <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.sendtorevision')}}</button>       
-                                            </form>
-                                        @endif
-                                        @if ($advertise->declined == true)
+                                @if (Auth::user()->reviewer)
+                                <div class="d-flex mb-5 gap-3 justify-content-around">
+                                    @if ($advertise->pending == false)
+                                    <form action="{{route('reviewer.reset', compact('advertise'))}}" method="POST">
+                                        @csrf
+                                        <button class="btn bg-success btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.sendtorevision')}}</button>       
+                                    </form>
+                                    @endif
+                                    @if ($advertise->declined == true)
                                         <form action="{{route('reviewer.delete', compact('advertise'))}}" method="POST">
                                             @csrf
                                             <button class="btn bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.delete')}}</button>       
                                         </form>
-                                        @endif
-                                    </div>
+                                    @elseif ($advertise->user_id == Auth::user()->id)
+                                        <form action="{{route('advertise.delete', compact('advertise'))}}" method="POST">
+                                            @csrf
+                                            <button class="btn bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.delete')}}</button>
+                                        </form>  
                                     @endif
+                                @elseif ($advertise->user_id == Auth::user()->id && $advertise->pending == false)
+                                        <form action="{{route('advertise.delete', compact('advertise'))}}" method="POST">
+                                            @csrf
+                                            <button class="btn bg-danger btn2 flex-grow-1" type="submit" style = "border-radius : 10px">{{__('ui.delete')}}</button>       
+                                        </form>
+                                @endif
+                                </div>
                                 @endauth
                             </div>
                         </div>

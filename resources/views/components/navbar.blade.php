@@ -19,7 +19,7 @@
                   </a>
                   <ul class="dropdown-menu">
                       @foreach(App\Models\Category::all() as $category)
-                          <li><a class="dropdown-item" href="{{route('advertise.indexCategory', compact('category'))}}">{{$category->name}}</a></li>
+                          <li><a class="dropdown-item" href="{{route('advertise.indexCategory', compact('category'))}}">{{__("ui.$category->name")}}</a></li>
                       @endforeach
                   </ul>
               </li>
@@ -70,13 +70,13 @@
           @if(Route::currentRouteName() == 'reviewer.users' || Route::currentRouteName() == "users.search.get" || Route::currentRouteName() == 'users.search.get')
             <form action="{{Route::currentRouteName() == 'reviewer.users' || "users.search.get" || 'users.search.get' ? route('users.search') : route('advertise.search')}}" method="POST" class="d-flex ms-auto" role="search">
                 @csrf
-              <input class="form-control me-2" type="search" placeholder="{{__('ui.searchuser')}}" aria-label="Search" name="stringa">
+              <input class="form-control me-2 ricerca" type="search" placeholder="{{__('ui.searchuser')}}" aria-label="Search" name="stringa">
               <button class="btn btn-main" type="submit">{{__('ui.search')}}</button>
           </form>
           @else
             <form action="{{Route::currentRouteName() == 'reviewer.users' || "users.search.get" || 'users.search.get' ? route('users.search') : route('advertise.search')}}" method="POST" class="d-flex ms-auto" role="search">
                 @csrf
-              <input class="form-control me-2" type="search" placeholder="{{__('ui.searchadvertise')}}" aria-label="Search" name="stringa">
+              <input class="form-control me-2 ricerca" type="search" placeholder="{{__('ui.searchadvertise')}}" aria-label="Search" name="stringa">
               <button class="btn btn-main" type="submit">{{__('ui.search')}}</button>
           </form>
           @endif

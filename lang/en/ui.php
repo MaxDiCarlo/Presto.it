@@ -45,6 +45,12 @@ return
         'norevusers' => 'Not reviewer users',
         'search' => "Search",
         'searchadvertise' => "Search by title, category and description",
-        'searchuser' => "search user"
+        'searchuser' => "search user",
+        'sport' => 'sport',
+        'console e videogiochi' => 'consoles and video games',
+        'intrattenimento' => 'entertainment',
+        'tech' => 'tech',
+        'casa' => 'home',
+        'moda' => 'fashion'
     ];
 ?>
