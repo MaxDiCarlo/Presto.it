@@ -25,7 +25,7 @@
                     <x-card :advertise="$advertise"/>
                 </div>     
                 @endforeach
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mb-5">
                     <a href="{{route('advertise.index')}}" class="btn btn-main">{{__('ui.showall')}}</a>
                 </div>
         @else
