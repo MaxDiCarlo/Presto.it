@@ -1,4 +1,4 @@
-<div class="pending text-center" style="width: 18rem;">
+<div class="pending d-flex justify-content-center text-center" style="width: 18rem;">
   <div class=" card-body d-flex flex-column">
     <h5 class="card-title">{{$advertise->title}}</h5>
     <p class="card-text">€{{$advertise->price}}</p>
