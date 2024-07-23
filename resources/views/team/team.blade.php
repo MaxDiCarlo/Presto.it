@@ -2,7 +2,7 @@
     <div class="container-fluid my-5 py-3">
         <div class="row pb-5 mb-3">
             <div class="col-12 d-flex justify-content-center">
-                <h2 class="presentation-h2">{{__('ui.ourteam')}}</h2>
+                <h1 class="h1">{{__('ui.ourteam')}}</h1>
             </div>
         </div>
         {{-- PRIMA FILA --}}

@@ -1,6 +1,9 @@
 <x-layout>
     <x-masthead></x-masthead>
     <div class="container-fluid my-3 py-3">
+        <div class="row justify-content-around gap-1 pb-2">
+            <h1 class="sottotitolocategoria">Scegli una categoria...</h1>
+            </div>
         <div class="row justify-content-around gap-3 mb-5 pb-5">
                 <div class="col-11 col-md-11">
                     <ul class="nav nav-pills nav-fill">
@@ -16,7 +19,7 @@
         @if (count($advertises) > 0)
             <div class="row mb-5">
                 <div class="col-12 d-flex justify-content-center">
-                    <h2 class="presentation-h2">{{__('ui.latest articles')}}</h2>
+                    <h1 class="h1">{{__('ui.latest articles')}}</h1>
                 </div>
             </div>
             <div class="row justify-content-around">

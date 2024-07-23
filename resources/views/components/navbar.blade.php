@@ -54,16 +54,16 @@
                   </li>
               @endguest
           </ul>
-
+            {{-- DROPDOWN LINGUE --}}
           <li class="nav-item dropdown" style="margin: 0 1rem; list-style: none;">
-            <a class="nav-item dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;"><i class="bi bi-translate" style="font-size: 25px; margin-right: 20px"></i></a>
-            <ul class="dropdown-menu" style="margin-top: 4px">
+            <a class="nav-item dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style= "text-decoration: none;"><i class="bi bi-translate" style="font-size: 25px; margin-right: 20px"></i></a>
+            <ul class="dropdown-menu" style="margin-top: 2px; width: 60px;">
 
-                <li><a class="dropdown-item" href=""><x-_locale lang="it" /></a></li>
+                <li><a class="dropdown-item p-0 m-0" href=""><x-_locale lang="it" /></a></li>
                 
-                <li><a class="dropdown-item" href=""><x-_locale lang="en" /></a></li>
+                <li><a class="dropdown-item p-0 m-0" href=""><x-_locale lang="en" /></a></li>
                
-                <li><a class="dropdown-item" href=""><x-_locale lang="es" /></a></li>
+                <li><a class="dropdown-item p-0 m-0" href=""><x-_locale lang="es" /></a></li>
                
             </ul>
           </li>

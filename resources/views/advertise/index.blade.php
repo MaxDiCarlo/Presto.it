@@ -1,6 +1,7 @@
 <x-layout>
     <x-masthead2></x-masthead2>
      <div class="container-fluid my-3 py-3">
+        
         <div class="row justify-content-around gap-1 mb-5 pb-5">
                 <div class="col-11 col-md-11">
                     <ul class="nav nav-pills nav-justified">

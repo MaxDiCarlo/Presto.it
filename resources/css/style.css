@@ -8,9 +8,20 @@
   
   }
 
-  h1,p, .nav-link, .navbar-brand, .btn{
+  h1, p, .nav-link, .navbar-brand, .btn{
     font-family: "Space Grotesk", sans-serif;
     font-optical-sizing: auto;
+  }
+
+  .h1 {
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--main);
+  }
+
+  .sottotitolocategoria {
+    margin-left: 125px;
+    margin-bottom:30px;
+    color: var(--main);
   }
 
   .titolomedio{

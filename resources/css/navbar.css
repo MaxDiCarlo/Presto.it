@@ -10,6 +10,10 @@
 .secnav > .container-fluid > .navbar-collapse > .navbar-nav > .nav-item > .nav-link {
     color: var(--main) !important;
 }
+.secnav > .container-fluid > .navbar-collapse > .nav-item > .nav-item > .bi {
+    color: var(--main) !important;
+}
+
 
 
 
