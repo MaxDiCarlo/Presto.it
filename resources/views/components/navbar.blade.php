@@ -67,9 +67,6 @@
                
             </ul>
           </li>
-          <x-_locale lang="it" />
-          <x-_locale lang="en" />
-          <x-_locale lang="es" />
           <form action="{{Route::currentRouteName() == 'reviewer.users' || "users.search.get" || 'users.search.get' ? route('users.search') : route('advertise.search')}}" method="POST" class="d-flex ms-auto" role="search">
               @csrf
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="stringa">
