@@ -51,6 +51,9 @@ return
         'intrattenimento' => 'entertainment',
         'tech' => 'tech',
         'casa' => 'home',
-        'moda' => 'fashion'
+        'moda' => 'fashion',
+        'login' => 'login',
+        'register' => 'register',
+        'logout' => 'logout'
     ];
 ?>

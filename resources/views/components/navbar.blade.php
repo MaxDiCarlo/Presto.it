@@ -54,16 +54,16 @@
                           <li><a class="dropdown-item" href="{{route('reviewer.richiesta')}}">{{__('ui.workwithus')}}</a></li>
                       @endif
                       <li><hr class="dropdown-divider"></li>
-                      <li><form action="{{route('logout')}}" method="POST">@csrf<button class="dropdown-item" type="submit">Logout</button></form></li>
+                      <li><form action="{{route('logout')}}" method="POST">@csrf<button class="dropdown-item" type="submit">{{__('ui.logout')}}</button></form></li>
                   </ul>
               </li>
               @endauth
               @guest
                   <li class="nav-item" style="margin: 0 1rem;">
-                      <a class="btn btn-orange rounded-5" href="{{route('login')}}" style="color: white; text-decoration: none;">Login</a>
+                      <a class="btn btn-orange rounded-5" href="{{route('login')}}" style="color: white; text-decoration: none;">{{__('ui.login')}}</a>
                   </li>
                   <li class="nav-item" style="margin: 0 1rem;">
-                      <a class="btn btn-orange rounded-5" href="{{route('register')}}" style="color: white; text-decoration: none;">Register</a>
+                      <a class="btn btn-orange rounded-5" href="{{route('register')}}" style="color: white; text-decoration: none;">{{__('ui.register')}}</a>
                   </li>
               @endguest
             </ul>

@@ -3,21 +3,36 @@
     <div class="container-fluid my-3 py-3">
         <div class="row justify-content-around gap-1 pb-2">
             <div class="col-12 col-md-11">
-            <h1 class="sottotitolocategoria">{{__('ui.choosecategory')}}...</h1>
+                <h1 class="sottotitolocategoria">{{__('ui.choosecategory')}}...</h1>
             </div>
-            </div>
-            <div class="row justify-content-around gap-3 pb-5">
-                <div class="col-12 col-md-12 my-4">
-                    @foreach(App\Models\Category::all() as $category)
+        </div>
+        {{-- <div class="row justify-content-around gap-3 pb-5">
+            <div class="col-12 col-md-12 my-4">
+                @foreach(App\Models\Category::all() as $category)
                     <ul class="nav nav-pills nav-fill my-3">
                         <li class="nav-item">
-                          <a class=" btn btn-orange rounded-5 mx-4" aria-current="page" href="{{route('advertise.indexCategory', compact('category'))}}">{{__("ui.$category->name")}}</a>
+                            <a class=" btn btn-orange rounded-5 mx-4" aria-current="page" href="{{route('advertise.indexCategory', compact('category'))}}">{{__("ui.$category->name")}}</a>
                         </li>
                     </ul>
+                @endforeach
+            </div>  
+        </div> --}}
+        <div class="row justify-content-around gap-3 pb-5">
+            <div class="col-12 col-md-12 my-4">
+                <ul class="nav nav-pills my-2">
+                    @foreach(App\Models\Category::all() as $category)
+                        <li class="nav-item my-3">
+                            <!-- Button linking to the category's advertisement index -->
+                            <a class="btn btn-orange rounded-5 btn-category" aria-current="page" href="{{ route('advertise.indexCategory', ['category' => $category]) }}">
+                                {{ __("ui.$category->name") }}
+                            </a>
+                        </li>
                     @endforeach
-                </div>
-               
-        </div>
+                </ul>
+            </div>
+        </div>        
+        
+        
         @if (count($advertises) > 0)
             <div class="row justify-content-around mb-5">
                 <div class="col-12 col-md-11">

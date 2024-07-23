@@ -317,3 +317,8 @@ a{
   background: white !important;
   border: 1px green solid !important;
 }
+
+.btn-category {
+  margin-left: 120px;
+  margin-right: 90px;
+}

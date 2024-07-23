@@ -51,6 +51,9 @@ return
         'intrattenimento' => 'entretenimiento',
         'tech' => 'tecnología',
         'casa' => 'hogar',
-        'moda' => 'moda'
+        'moda' => 'moda',
+        'login' => 'acceso',
+        'register' => 'iniciar sesión',
+        'logout' => 'cerrar sesión'
     ];
 ?>
