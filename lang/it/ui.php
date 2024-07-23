@@ -52,7 +52,7 @@ return
         'tech' => 'tech',
         'casa' => 'casa',
         'moda' => 'moda',
-        'login' => 'accedi',
-        'register' => 'registrati',
-        'logout' => 'disconnetti'
+        'login' => 'Accedi',
+        'register' => 'Registrati',
+        'logout' => 'Disconnetti'
     ];

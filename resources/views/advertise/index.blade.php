@@ -3,20 +3,27 @@
     <div class="container-fluid my-3 py-3">
         <div class="row justify-content-around gap-1 pb-2">
             <div class="col-12 col-md-11">
-            <h1 class="sottotitolocategoria">{{__('ui.choosecategory')}}...</h1>
+                <h1 class="sottotitolocategoria">{{__('ui.choosecategory')}}...</h1>
             </div>
-            </div>
-            <div class="row justify-content-around gap-3 pb-5">
-                <div class="col-12 col-md-12 my-4">
-                    @foreach(App\Models\Category::all() as $category)
-                    <ul class="nav nav-pills nav-fill my-3">
-                        <li class="nav-item">
-                          <a class=" btn btn-orange rounded-5 mx-4" aria-current="page" href="{{route('advertise.indexCategory', compact('category'))}}">{{__("ui.$category->name")}}</a>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-around gap-3 pb-5">
+            @foreach(App\Models\Category::all() as $category)
+            <div class="col-12 col-md-3 my-4">
+                <ul class="nav nav-tabs nav-fill my-2">
+                    <li class="nav-item my-3">
+                            <!-- Button linking to the category's advertisement index -->
+                            <a class="btn btn-orange rounded-5 btn-category px-5 mx-5" aria-current="page" href="{{ route('advertise.indexCategory', ['category' => $category]) }}">
+                                {{ __("ui.$category->name") }}
+                            </a>
                         </li>
                     </ul>
-                    @endforeach
                 </div>
-    <div class="container-fluid">
+                @endforeach
+            </div>
+        </div>        
+    <div class="container-fluid" style="min-height: 800px">
         @if ($advertises->count() > 0)
             <div class="row justify-content-around mt-5">
                 @foreach($advertises as $advertise)
@@ -26,7 +33,7 @@
                 @endforeach
             </div>
         @else
-            <div class="row justify-content-center my-5">
+            <div class="row justify-content-center">
                 <div class="col-12 col-md-10 text-center opacity-50">
                     <h1>{{__('ui.noadvertise')}}</h1>
                     <p>{{__('ui.trylater')}}</p>
@@ -36,8 +43,8 @@
     </div>
     @if (request()->routeIs('advertise.index') && count($advertises) > 0)
         <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-12 col-md-6 text-center d-flex justify-content-center gap-3">
+            <div class="row justify-content-center mb-5 pb-5">
+                <div class="col-12 col-md-6 text-center d-flex justify-content-center gap-3 pb-5">
                     @if ($advertises->onFirstPage())
                         <div class="arrow-container disabled">
                             <div class="arrow-left"></div>
