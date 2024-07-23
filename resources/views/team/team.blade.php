@@ -27,7 +27,7 @@
         </div>
 
         {{-- SECONDA FILA --}}
-        <div class="row justify-content-center mb-5">
+        <div class="row justify-content-center mb-5 pb-5">
             <div class="col-12 col-md-5 d-flex flex-column align-items-center mb-5">
                 <div class="card" style="border: none; box-shadow:none;">
                     <div class="image-container" style="background-color:#d9e7f036;">

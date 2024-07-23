@@ -6,15 +6,15 @@
             <h1 class="sottotitolocategoria">{{__('ui.choosecategory')}}...</h1>
             </div>
             </div>
-        <div class="row justify-content-around gap-3 mb-5 pb-5">
-                <div class="col-12 col-md-9">
-                    <ul class="nav nav-pills nav-fill">
-                        @foreach(App\Models\Category::all() as $category)
-                        <li class="nav-item d-flex justify-content-around">
+            <div class="row justify-content-around gap-3 pb-5">
+                <div class="col-12 col-md-12 my-4">
+                    @foreach(App\Models\Category::all() as $category)
+                    <ul class="nav nav-pills nav-fill my-3">
+                        <li class="nav-item">
                           <a class=" btn btn-orange rounded-5 mx-4" aria-current="page" href="{{route('advertise.indexCategory', compact('category'))}}">{{__("ui.$category->name")}}</a>
                         </li>
-                        @endforeach
-                      </ul>
+                    </ul>
+                    @endforeach
                 </div>
                
         </div>
