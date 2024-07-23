@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <div class="container-fluid container-area">
+    <div class="container-fluid container-area" style="min-height: 850px">
         <div class="row justify-content-around align-items-center m-0">
             <div class="col-12 col-md-5 text-center option p-0" data-url="{{route('reviewer.advertises')}}">
                 <div class="bg"></div>

@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <div class="container-fluid">
+    <div  class="container-fluid"  style="min-height: 700px">
         @if ($users->count() > 0)
             <div class="row justify-content-center mt-5 opacity-50"><h1 class="col-10 text-center">{{__('ui.norevusers')}}</h1></div>
             <div class="row justify-content-around mt-5">
@@ -30,7 +30,7 @@
     </div>
 
     @if ($users->count() > 0)
-        <div class="container mb-5">
+        <div class="container mb-5" style="min-height: 700px">
             <div class="row justify-content-center mb-5">
                 <div class="col-12 col-md-6 text-center d-flex justify-content-center gap-3">
                     @if ($users->onFirstPage())

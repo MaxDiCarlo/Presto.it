@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container">
+    <div class="container" style="min-height: 2000px;">
         <div class="row justify-content-center">
             <div class="col-11 col-md-8 col-lg-6">
                 <div class="shower">
@@ -44,12 +44,12 @@
                         @endif
                         @endforeach
                     @endif
-                    <div class="container-fluid body pb-3">
+                    <div class="container-fluid body pb-3" >
                         <div class="row">
                             <div class="col-12">
-                                <h2><strong>€{{$advertise->price}}</strong></h2>
-                                <h2><strong>{{$advertise->title}}</strong></h2>
-                                <p class="card-text"><a href="{{route('advertise.category', compact('advertise'))}}"><span class="badge rounded-pill text-bg-custom">{{$advertise->category->name}}</span></a></p>
+                                <h1>{{__('ui.price')}}:    €{{$advertise->price}}</h1>
+                                <h2>{{__('ui.title')}}:    {{$advertise->title}}</h2>
+                                <p class="card-text"><a href="{{route('advertise.category', compact('advertise'))}}"><span class="btn btn-orange rounded-5">{{$advertise->category->name}}</span></a></p>
                                 <p><strong>{{__('ui.salesperson')}}: {{$advertise->user->name}}</strong></p>
                                 <div class="divisore"></div>
                                 <p class="m-0">{{$advertise->description}}</p>

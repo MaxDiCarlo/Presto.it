@@ -34,7 +34,7 @@ return
         'request' => 'Request',
         'sendrequest' => 'Send request',
         'workwithus' => 'Work with us',
-        'salesperson' => 'Salesperson',
+        'salesperson' => 'Sales person',
         'accept' => 'Accept',
         'decline' => 'Decline',
         'makereviewer' => 'Make reviewer',

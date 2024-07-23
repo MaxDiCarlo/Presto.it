@@ -15,7 +15,7 @@
           <h1 class="text-white mt-5 pt-5 animate__animated animate__fadeInLeft">{{__('ui.welcomeheader')}}</h1>
           <p class="lead text-white animate__animated animate__fadeInLeft">{{__('ui.subtitleheader')}}</p>
           <div class="mb-2">
-            <a class="btn btn-main mt-3" href="{{route('advertise.create')}}">{{__('ui.insertadvertise')}} +</a>
+            <a class="btn btn-main mt-3" href="{{route('advertise.create')}}">{{__('ui.insertadvertise')}} <i class="bi bi-plus-circle"></i></a>
           </div>
           <div>
             <a class="btn btn-main mt-2" href="{{route('advertise.index')}}">{{__('ui.latest articles')}}</a>

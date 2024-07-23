@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid my-5 py-3">
+    <div class="container-fluid my-5 py-3" style="min-height: 900px">
         <div class="row pb-5 mb-3">
             <div class="col-12 d-flex justify-content-center">
                 <h1 class="h1">{{__('ui.ourteam')}}</h1>
@@ -7,7 +7,7 @@
         </div>
         {{-- PRIMA FILA --}}
         <div class="row justify-content-center mb-5">
-            <div class="col-12 col-md-5 d-flex flex-column align-items-center">
+            <div class="col-12 col-md-5 d-flex flex-column align-items-center mb-5">
                 <div class="card" style="border: none; box-shadow:none;">
                     <div class="image-container" style="background-color:#d9e7f036;">
                         <img src="/images/lorenzo.jpg" class="card-img-top cartateam" alt="...">
@@ -27,8 +27,8 @@
         </div>
 
         {{-- SECONDA FILA --}}
-        <div class="row mt-5 pt-3 pb-5 mb-3 justify-content-center">
-            <div class="col-12 col-md-5 d-flex flex-column align-items-center">
+        <div class="row justify-content-center mb-5">
+            <div class="col-12 col-md-5 d-flex flex-column align-items-center mb-5">
                 <div class="card" style="border: none; box-shadow:none;">
                     <div class="image-container" style="background-color:#d9e7f036;">
                         <img src="/images/max.jpg" class="card-img-top cartateam img-fluid" alt="...">

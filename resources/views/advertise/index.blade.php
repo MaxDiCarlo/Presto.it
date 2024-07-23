@@ -1,17 +1,21 @@
 <x-layout>
     <x-masthead2></x-masthead2>
-     <div class="container-fluid my-3 py-3">
-        
-        <div class="row justify-content-around gap-1 mb-5 pb-5">
-                <div class="col-11 col-md-11">
-                    <ul class="nav nav-pills nav-justified">
-                        @foreach(App\Models\Category::all() as $category)
-                        <li class="nav-item">
-                          <a class="nav-link nav2 rounded-0" aria-current="page" href="{{route('advertise.indexCategory', compact('category'))}}">{{$category->name}}</a>
-                        </li>
-                        @endforeach
-                      </ul>
-                </div>
+    <div class="container-fluid my-3 py-3">
+        <div class="row justify-content-around gap-1 pb-2">
+            <div class="col-12 col-md-11">
+            <h1 class="sottotitolocategoria">{{__('ui.choosecategory')}}...</h1>
+            </div>
+            </div>
+        <div class="row justify-content-around gap-3 mb-5 pb-5">
+            <div class="col-12 col-md-9">
+                <ul class="nav nav-pills nav-fill">
+                    @foreach(App\Models\Category::all() as $category)
+                    <li class="nav-item d-flex justify-content-around">
+                      <a class=" btn btn-orange rounded-5 mx-4" aria-current="page" href="{{route('advertise.indexCategory', compact('category'))}}">{{__("ui.$category->name")}}</a>
+                    </li>
+                    @endforeach
+                  </ul>
+            </div>
     <div class="container-fluid">
         @if ($advertises->count() > 0)
             <div class="row justify-content-around mt-5">

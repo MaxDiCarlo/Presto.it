@@ -27,14 +27,27 @@
               <li class="nav-item" style="margin: 0 1rem;">
                 <a class="nav-link nav1" href="{{route('team')}}" style="color: white; text-decoration: none;">{{__('ui.ourteam')}}</a>
               </li>
-              @auth
-              {{-- DROPDOWN UTENTE --}}
+              @if(Route::currentRouteName() == 'reviewer.users' || Route::currentRouteName() == "users.search.get" || Route::currentRouteName() == 'users.search.get')
+              <form action="{{route('users.search')}}" method="POST" class="d-flex ms-auto" role="search">
+                  @csrf
+                  <input class="form-control me-2 ricerca rounded-5" type="search" placeholder="{{__('ui.searchuser')}}" aria-label="Search" name="stringa">
+                  <button class="btn btn-main rounded-5" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+                @else
+                <form action="{{route('advertise.search')}}" method="POST" class="d-flex ms-auto" role="search">
+                    @csrf
+                    <input class="form-control me-2 ricerca rounded-5" type="search" placeholder="{{__('ui.searchadvertise')}}" aria-label="Search" name="stringa">
+                    <button class="btn btn-main rounded-5" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+                @endif
+                {{-- DROPDOWN UTENTE --}}
+                @auth
               <li class="nav-item dropdown" style="margin: 0 1rem;">
-                  <a class="nav-link nav1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;">
-                      {{__('ui.welcome').' '.Auth::user()->name}}
+                  <a class=" btn btn-orange rounded-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="">
+                      {{__('ui.welcome').' '.Auth::user()->name}}<i class="mx-2 bi bi-person-circle"></i>
                   </a>
                   <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="{{route('advertise.create')}}">{{__('ui.insertadvertise')}}</a></li>
+                      <li><a class="dropdown-item" href="{{route('advertise.create')}}">{{__('ui.insertadvertise')}}<i class="mx-2 bi bi-plus-circle"></i></a></li>
                       @if(Auth::user()->reviewer)
                           <li><a class="dropdown-item" href="{{route('reviewer.area')}}">{{__('ui.reviewersarea')}}</a></li>
                       @else
@@ -47,13 +60,13 @@
               @endauth
               @guest
                   <li class="nav-item" style="margin: 0 1rem;">
-                      <a class="nav-link nav1" href="{{route('login')}}" style="color: white; text-decoration: none;">Login</a>
+                      <a class="btn btn-orange rounded-5" href="{{route('login')}}" style="color: white; text-decoration: none;">Login</a>
                   </li>
                   <li class="nav-item" style="margin: 0 1rem;">
-                      <a class="nav-link nav1" href="{{route('register')}}" style="color: white; text-decoration: none;">Register</a>
+                      <a class="btn btn-orange rounded-5" href="{{route('register')}}" style="color: white; text-decoration: none;">Register</a>
                   </li>
               @endguest
-          </ul>
+            </ul>
             {{-- DROPDOWN LINGUE --}}
           <li class="nav-item dropdown" style="margin: 0 1rem; list-style: none;">
             <a class="nav-item dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style= "text-decoration: none;"><i class="bi bi-translate" style="font-size: 25px; margin-right: 20px"></i></a>
@@ -67,19 +80,6 @@
                
             </ul>
           </li>
-          @if(Route::currentRouteName() == 'reviewer.users' || Route::currentRouteName() == "users.search.get" || Route::currentRouteName() == 'users.search.get')
-            <form action="{{route('users.search')}}" method="POST" class="d-flex ms-auto" role="search">
-                @csrf
-              <input class="form-control me-2 ricerca" type="search" placeholder="{{__('ui.searchuser')}}" aria-label="Search" name="stringa">
-              <button class="btn btn-main" type="submit">{{__('ui.search')}}</button>
-          </form>
-          @else
-            <form action="{{route('advertise.search')}}" method="POST" class="d-flex ms-auto" role="search">
-                @csrf
-              <input class="form-control me-2 ricerca" type="search" placeholder="{{__('ui.searchadvertise')}}" aria-label="Search" name="stringa">
-              <button class="btn btn-main" type="submit">{{__('ui.search')}}</button>
-          </form>
-          @endif
       </div>
   </div>
 </nav>

@@ -5,4 +5,6 @@
     <li class="nav-item"><a href="{{route('team')}}" class="nav-link footer px-2 text-body-secondary">Il nostro team</a></li>
   </ul>
   <p class="text-center text-body-secondary footer m-0"><img src="/images/logo.png" width="80" height="80" alt="Logo del sito">© 2024 Company, Inc</p>
+  <p class="text-center text-body-secondary footer mt-3 fs-4"><i class="bi bi-facebook mx-4"></i><i class="bi bi-instagram mx-4"></i><i class="bi bi-twitter-x mx-4"></i></p>
 </footer>
+

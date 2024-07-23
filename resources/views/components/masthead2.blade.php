@@ -11,7 +11,7 @@
           @endguest
           @auth
             <p class="lead text-white animate__animated animate__fadeInLeft">{{__('ui.subtitleindex')}}</p>
-            <a class="btn btn-main" href="{{route('advertise.create')}}">{{__('ui.insertadvertise')}} +</a>
+            <a class="btn btn-main" href="{{route('advertise.create')}}">{{__('ui.insertadvertise')}} <i class="bi bi-plus-circle"></i></a>
           @endauth
         </div>
       </div>

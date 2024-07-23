@@ -13,7 +13,7 @@
             </ul>
         </div>
     @endif
-    <form wire:submit="storeAdvertise">
+    <form wire:submit="storeAdvertise" style="min-height: 1000px">
       <div class="my-3">
           <label for="title" class="form-label">{{__('ui.title')}}</label>
           <input type="text" class="form-control" id="title" wire:model="title">

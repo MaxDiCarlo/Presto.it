@@ -9,7 +9,7 @@
             {{session('alert')}}
         </div>
     @endif
-    <div class="container">
+    <div class="container" style="min-height: 700px">
         @if (count($advertises) > 0)
                 <div class="row justify-content-around my-5">
                 @foreach($advertises as $advertise)
