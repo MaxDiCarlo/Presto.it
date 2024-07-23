@@ -57,7 +57,7 @@
 
           <li class="nav-item dropdown" style="margin: 0 1rem; list-style: none;">
             <a class="nav-item dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white; text-decoration: none;"><i class="bi bi-translate" style="font-size: 25px; margin-right: 20px"></i></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="margin-top: 4px">
 
                 <li><a class="dropdown-item" href=""><x-_locale lang="it" /></a></li>
                 
