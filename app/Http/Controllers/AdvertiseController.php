@@ -61,29 +61,23 @@ class AdvertiseController extends Controller
     }
 
     public function search(Request $request) {
-        $stringa = strtolower($request->input('stringa'));
-
-        // Trova la categoria che corrisponde al nome cercato
-        $category = Category::where('name', 'LIKE', "%{$stringa}%")->first();
-
-        // Filtra gli annunci in base ai criteri di ricerca e agli stati delle colonne pending e declined
+        $stringa = strtolower($request->input('stringa', ''));
+    
         $query = Advertise::where('pending', false)
-                        ->where('declined', false)
-                        ->where(function ($query) use ($stringa, $category) {
-                            // Filtra per titolo e descrizione
-                            $query->where('title', 'LIKE', "%{$stringa}%")
+                          ->where('declined', false)
+                          ->where(function ($query) use ($stringa) {
+                              $query->where('title', 'LIKE', "%{$stringa}%")
                                     ->orWhere('description', 'LIKE', "%{$stringa}%");
-
-                            // Se è stata trovata una categoria, filtra anche per category_id
-                            if ($category) {
-                                $query->orWhere('category_id', $category->id);
-                            }
-                        })
-                        ->latest()
-                        ->paginate(6);
-
-        // Passa gli annunci filtrati alla vista
-        return view('advertise.index', ['advertises' => $query]);
+    
+                              $category = Category::where('name', 'LIKE', "%{$stringa}%")->first();
+                              if ($category) {
+                                  $query->orWhere('category_id', $category->id);
+                              }
+                          });
+    
+        $advertises = $query->latest()->paginate(6)->appends(['stringa' => $stringa]);
+    
+        return view('advertise.index', compact('advertises'));
     }
 
 }
