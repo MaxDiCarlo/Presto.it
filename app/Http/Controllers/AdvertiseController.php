@@ -21,7 +21,10 @@ class AdvertiseController extends Controller
 
     public function indexCategory(Category $category){
         // dd($category->id);
-        $advertises = Advertise::where('category_id', $category->id)->latest()->paginate(6);
+        $advertises = Advertise::where('pending', false)
+                                ->where('declined', false)
+                                ->where('category_id', $category->id)->latest()->paginate(6);
+                                
         return view('advertise.index', compact('advertises'));
     }
 

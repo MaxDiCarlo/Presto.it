@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container" style="min-height: 2000px;">
+    <div class="container" style="min-height: 1200px;">
         <div class="row justify-content-center">
             <div class="col-11 col-md-8 col-lg-6">
                 <div class="shower">
